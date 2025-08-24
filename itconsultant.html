@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Solutions & Consultancy - Digital Transformation Services | Arihant Staffing</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'slideInUp': 'slideInUp 0.8s ease-out',
+                        'fadeInScale': 'fadeInScale 0.6s ease-out',
+                        'rotate-slow': 'rotate 20s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' }
+                        },
+                        slideInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(50px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeInScale: {
+                            '0%': { opacity: '0', transform: 'scale(0.8)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        rotate: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-bg { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+        }
+        .gradient-text { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        .gradient-it {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .banner-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            opacity: 0.08;
+        }
+        .banner-shape-1 {
+            width: 400px;
+            height: 400px;
+            top: -200px;
+            right: -200px;
+            animation: float 6s ease-in-out infinite;
+        }
+        .banner-shape-2 {
+            width: 250px;
+            height: 250px;
+            bottom: -125px;
+            left: -125px;
+            animation: float 4s ease-in-out infinite reverse;
+        }
+        .banner-shape-3 {
+            width: 180px;
+            height: 180px;
+            top: 40%;
+            right: 15%;
+            animation: float 5s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+        .tech-grid {
+            background: linear-gradient(45deg, #f0f9ff 25%, transparent 25%), 
+                        linear-gradient(-45deg, #f0f9ff 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, #f0f9ff 75%), 
+                        linear-gradient(-45deg, transparent 75%, #f0f9ff 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+    </style>
+</head>
+
+<body class="bg-white min-h-screen text-gray-800">
+    
+    <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 transition-all duration-500 bg-white/90 backdrop-blur-lg border-b border-gray-200 shadow-sm" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-3xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Arihant Staffing</span>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-8">
+                  <a href="index.html" class="block text-gray-700 hover:text-purple-600 font-semibold">Home</a>
+            <a href="index2.html" class="block text-gray-700 hover:text-purple-600 font-semibold">Home2 demo</a>
+                
+                <!-- Services Dropdown -->
+                <div class="relative group">
+                    <button class="nav-link text-gray-700 hover:text-purple-600 transition-colors duration-300 font-semibold flex items-center space-x-1" id="services-btn">
+                        <span>Services</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    
+                    <!-- Full Width Dropdown Menu -->
+                    <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-6xl bg-white backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0" id="services-dropdown">
+                        <div class="p-8">
+                            <!-- Services Grid - 2 Columns on Large Screens -->
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                <!-- Staff Augmentation -->
+                                <a href="#staff-augmentation" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center">
+                                            <i class="fas fa-user-plus text-white text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">Staff Augmentation</h4>
+                                        <p class="text-gray-600 text-base mt-2">Scale your team with skilled professionals and expand your workforce efficiently</p>
+                                    </div>
+                                </a>
+                                
+                                <!-- HR Solutions -->
+                                <a href="hrsolution.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center">
+                                            <i class="fas fa-users-cog text-white text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">HR Solutions</h4>
+                                        <p class="text-gray-600 text-base mt-2">Complete human resource management and strategic HR consulting services</p>
+                                    </div>
+                                </a>
+                                
+                                <!-- Web Development -->
+                                <a href="itconsultant.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                                            <i class="fas fa-code text-white text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">Web Development</h4>
+                                        <p class="text-gray-600 text-base mt-2">Custom websites and web applications built with modern technologies</p>
+                                    </div>
+                                </a>
+                                
+                                <!-- IT Services and Consulting -->
+                                <a href="itconsultant.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
+                                            <i class="fas fa-laptop-code text-white text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">IT Services & Consulting</h4>
+                                        <p class="text-gray-600 text-base mt-2">Technology solutions and strategic IT consulting for business growth</p>
+                                    </div>
+                                </a>
+                                
+                                <!-- Business Process Outsourcing -->
+                                <a href="bso.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center">
+                                            <i class="fas fa-chart-network text-white text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">Business Process Outsourcing</h4>
+                                        <p class="text-gray-600 text-base mt-2">Streamline operations with comprehensive BPO solutions and services</p>
+                                    </div>
+                                </a>
+                                
+                                <!-- US Healthcare State License -->
+                                <a href="healthcareservices.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-14 h-14 bg-gradient-to-br from-rose-500 to-pink-600 rounded-xl flex items-center justify-center">
+                                            <i class="fas fa-heartbeat text-white text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">US Healthcare State License</h4>
+                                        <p class="text-gray-600 text-base mt-2">Healthcare licensing and compliance support for US state requirements</p>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Bottom Section with CTA -->
+                            <div class="mt-8 pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                <div class="text-center sm:text-left">
+                                    <h5 class="text-gray-800 font-bold text-lg">Need a Custom Solution?</h5>
+                                    <p class="text-gray-600 text-sm">Let's discuss your specific requirements</p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <a href="#all-services" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105">
+                                        View All Services
+                                    </a>
+                                    <a href="#contact" class="px-6 py-3 border-2 border-purple-600 text-purple-600 font-bold rounded-xl hover:bg-purple-50 transition-all duration-300">
+                                        Get Quote
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#about" class="nav-link text-gray-700 hover:text-purple-600 transition-colors duration-300 font-semibold">About</a>
+                <a href="#testimonials" class="nav-link text-gray-700 hover:text-purple-600 transition-colors duration-300 font-semibold">Reviews</a>
+                <button class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform duration-300 shadow-lg">
+                    Contact us
+                </button>
+            </div>
+            
+            <button class="lg:hidden text-gray-700 hover:text-purple-600" id="mobile-menu-btn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="lg:hidden bg-white border-t border-gray-200 py-4 hidden" id="mobile-menu">
+        <div class="max-w-7xl mx-auto px-6 space-y-4">
+            <a href="#home" class="block text-gray-700 hover:text-purple-600 font-semibold">Home</a>
+            
+            <!-- Mobile Services Dropdown -->
+            <div class="mobile-services">
+                <button class="flex items-center justify-between w-full text-gray-700 hover:text-purple-600 font-semibold" id="mobile-services-btn">
+                    <span>Services</span>
+                    <i class="fas fa-chevron-down transition-transform duration-300" id="mobile-chevron"></i>
+                </button>
+                <div class="hidden mt-3 ml-4 space-y-3" id="mobile-services-menu">
+                    <a href="#staff-augmentation" class="block text-gray-600 hover:text-purple-600 text-sm">Staff Augmentation</a>
+                    <a href="hrsolution.html" class="block text-gray-600 hover:text-purple-600 text-sm">HR Solutions</a>
+                    <a href="itconsultant.html" class="block text-gray-600 hover:text-purple-600 text-sm">Web Development</a>
+                    <a href="itconsultant.html" class="block text-gray-600 hover:text-purple-600 text-sm">IT Services & Consulting</a>
+                    <a href="bso.html" class="block text-gray-600 hover:text-purple-600 text-sm">Business Process Outsourcing</a>
+                    <a href="healthcareservices.html" class="block text-gray-600 hover:text-purple-600 text-sm">US Healthcare State License</a>
+                </div>
+            </div>
+            
+            <a href="#process" class="block text-gray-700 hover:text-purple-600 font-semibold">Process</a>
+            <a href="#industries" class="block text-gray-700 hover:text-purple-600 font-semibold">Industries</a>
+            <a href="#about" class="block text-gray-700 hover:text-purple-600 font-semibold">About</a>
+            <a href="#testimonials" class="block text-gray-700 hover:text-purple-600 font-semibold">Reviews</a>
+            <button class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-full font-bold">Contact Us</button>
+        </div>
+    </div>
+</nav>
+
+    <!-- IT Solutions Banner Section -->
+    <section class="relative pt-24 pb-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50 overflow-hidden">
+        <div class="banner-shape banner-shape-1"></div>
+        <div class="banner-shape banner-shape-2"></div>
+        <div class="banner-shape banner-shape-3"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <div class="inline-flex items-center space-x-3 bg-blue-100 text-blue-700 px-6 py-3 rounded-full text-sm font-semibold animate-on-scroll">
+                        <i class="fas fa-laptop-code animate-pulse-slow"></i>
+                        <span>IT Solutions & Consultancy</span>
+                        <i class="fas fa-rocket text-orange-500"></i>
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-7xl font-black leading-tight animate-on-scroll">
+                        Digital
+                        <span class="gradient-text block">Transformation</span>
+                        Made Simple
+                    </h1>
+                    
+                    <p class="text-xl lg:text-2xl text-gray-600 leading-relaxed animate-on-scroll">
+                        Strategic IT consulting and cutting-edge technology solutions that drive digital transformation, enhance operational efficiency, and accelerate business growth in the modern digital landscape.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 animate-on-scroll">
+                        <button class="gradient-it text-white px-10 py-4 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-xl flex items-center space-x-2">
+                            <span>Start Digital Journey</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="border-2 border-blue-300 text-blue-700 px-10 py-4 rounded-full font-bold hover:bg-blue-50 transition-colors duration-300 flex items-center space-x-2">
+                            <i class="fas fa-play"></i>
+                            <span>Watch Tech Demo</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Key Tech Stats -->
+                    <div class="grid grid-cols-3 gap-8 pt-8 animate-on-scroll">
+                        <div class="text-center">
+                            <div class="text-4xl font-black gradient-text">500+</div>
+                            <div class="text-sm text-gray-600 font-medium">Projects Delivered</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black gradient-text">99.9%</div>
+                            <div class="text-sm text-gray-600 font-medium">System Uptime</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black gradient-text">75%</div>
+                            <div class="text-sm text-gray-600 font-medium">Cost Reduction</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Visual -->
+                <div class="relative animate-on-scroll">
+                    <div class="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
+                        <!-- IT Dashboard Mock -->
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="text-xl font-bold text-gray-800">IT Infrastructure Dashboard</h3>
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse-slow"></div>
+                                    <div class="w-3 h-3 bg-blue-400 rounded-full animate-pulse-slow" style="animation-delay: 0.5s;"></div>
+                                    <div class="w-3 h-3 bg-purple-400 rounded-full animate-pulse-slow" style="animation-delay: 1s;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-100 animate-float">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-cloud text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-gray-800">Cloud Infrastructure</div>
+                                        <div class="text-sm text-gray-600">Multi-region deployment</div>
+                                    </div>
+                                </div>
+                                <div class="text-green-500 font-bold text-lg">Active</div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl border border-indigo-100 animate-float" style="animation-delay: 0.5s;">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-shield-alt text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-gray-800">Security Status</div>
+                                        <div class="text-sm text-gray-600">Advanced threat protection</div>
+                                    </div>
+                                </div>
+                                <div class="text-green-500 font-bold text-lg">Secure</div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-100 animate-float" style="animation-delay: 1s;">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-chart-line text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-gray-800">Performance Analytics</div>
+                                        <div class="text-sm text-gray-600">Real-time monitoring</div>
+                                    </div>
+                                </div>
+                                <div class="text-green-500 font-bold text-lg">Optimal</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Tech Elements -->
+                        <div class="absolute -top-6 -right-6 w-12 h-12 bg-blue-500 rounded-full opacity-60 animate-bounce-slow flex items-center justify-center">
+                            <i class="fas fa-cog text-white animate-rotate-slow"></i>
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 w-8 h-8 bg-purple-500 rounded-full opacity-60 animate-pulse-slow"></div>
+                        <div class="absolute top-1/2 -right-8 w-6 h-6 bg-cyan-500 rounded-full opacity-60 animate-bounce-slow" style="animation-delay: 1.5s;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Wave -->
+        <div class="absolute bottom-0 left-0 w-full">
+            <svg viewBox="0 0 1440 120" class="w-full h-16 fill-white">
+                <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Our IT Services -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-6xl font-black mb-6 animate-on-scroll text-gray-800">
+                    Complete <span class="gradient-text">IT Service Portfolio</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto animate-on-scroll">
+                    From cloud infrastructure to cybersecurity, we provide comprehensive IT solutions that modernize your technology stack and drive digital innovation.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Cloud Solutions -->
+                <div class="service-card animate-on-scroll bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-100 rounded-3xl p-8 hover:border-blue-300 hover:shadow-2xl">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-cloud text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Cloud Solutions & Migration</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Seamless cloud migration and optimization services with multi-cloud strategies for enhanced scalability and cost efficiency.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">AWS, Azure, Google Cloud Platform</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Infrastructure as Code (IaC)</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Containerization & Microservices</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Auto-scaling & Load balancing</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Cybersecurity -->
+                <div class="service-card animate-on-scroll bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-100 rounded-3xl p-8 hover:border-red-300 hover:shadow-2xl">
+                    <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Cybersecurity Solutions</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Advanced cybersecurity frameworks protecting your digital assets with multi-layered security protocols and threat intelligence.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Advanced threat detection & response</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Zero Trust security architecture</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Security audits & compliance</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Incident response & recovery</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Software Development -->
+                <div class="service-card animate-on-scroll bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-100 rounded-3xl p-8 hover:border-green-300 hover:shadow-2xl">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Custom Software Development</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Bespoke software solutions built with modern technologies to address unique business challenges and drive innovation.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Full-stack web applications</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Mobile app development</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">API development & integration</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">DevOps & CI/CD pipelines</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Data Analytics -->
+                <div class="service-card animate-on-scroll bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-100 rounded-3xl p-8 hover:border-purple-300 hover:shadow-2xl">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-bar text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Data Analytics & AI</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Transform raw data into actionable insights with advanced analytics, machine learning, and artificial intelligence solutions.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Business intelligence dashboards</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Machine learning models</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Predictive analytics</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Data warehouse & ETL solutions</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Infrastructure Management -->
+                <div class="service-card animate-on-scroll bg-gradient-to-br from-indigo-50 to-blue-50 border-2 border-indigo-100 rounded-3xl p-8 hover:border-indigo-300 hover:shadow-2xl">
+                    <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-server text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">IT Infrastructure Management</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Comprehensive infrastructure management ensuring optimal performance, reliability, and scalability of your IT systems.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">24/7 system monitoring</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Network optimization</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Backup & disaster recovery</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Performance tuning</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Digital Transformation -->
+                <div class="service-card animate-on-scroll bg-gradient-to-br from-teal-50 to-cyan-50 border-2 border-teal-100 rounded-3xl p-8 hover:border-teal-300 hover:shadow-2xl">
+                    <div class="w-20 h-20 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-digital-tachograph text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Digital Transformation</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Strategic digital transformation initiatives that modernize business processes and accelerate innovation.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Digital strategy consulting</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Process automation</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Legacy system modernization</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span class="text-gray-700">Change management</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="py-20 tech-grid">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-6xl font-black mb-6 animate-on-scroll text-gray-800">
+                    Our <span class="gradient-text">Technology Stack</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto animate-on-scroll">
+                    We leverage cutting-edge technologies and industry best practices to deliver robust, scalable, and future-ready solutions.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                
+                <!-- Frontend Technologies -->
+                <div class="text-center animate-on-scroll">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-react text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800">React.js</h4>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-node-js text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800">Node.js</h4>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-python text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800">Python</h4>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-aws text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800">AWS</h4>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-docker text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800">Docker</h4>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-database text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800">Database</h4>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our IT Solutions -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-6xl font-black mb-6 animate-on-scroll text-gray-800">
+                    Why Choose <span class="gradient-text">Arihant IT Solutions?</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto animate-on-scroll">
+                    Our expertise, innovation, and commitment to excellence make us the preferred IT partner for businesses seeking digital transformation.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                
+                <div class="animate-on-scroll bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-medal text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">15+ Years IT Expertise</h3>
+                    <p class="text-gray-600">Extensive experience in IT consulting and technology solutions across diverse industries and complex projects.</p>
+                </div>
+                
+                <div class="animate-on-scroll bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rocket text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">500+ Projects Delivered</h3>
+                    <p class="text-gray-600">Successfully delivered hundreds of IT projects ranging from simple automation to complex enterprise solutions.</p>
+                </div>
+                
+                <div class="animate-on-scroll bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-headset text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">24/7 Technical Support</h3>
+                    <p class="text-gray-600">Round-the-clock technical support and monitoring to ensure your systems run smoothly without interruption.</p>
+                </div>
+                
+            </div>
+
+            <!-- ROI Section -->
+            <div class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl shadow-xl p-12 animate-on-scroll">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl lg:text-4xl font-black mb-4 text-gray-800">
+                        Proven <span class="gradient-text">Business Results</span>
+                    </h3>
+                    <p class="text-lg text-gray-600">Our IT solutions deliver measurable impact that drives business growth and efficiency</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-5xl font-black gradient-text mb-2">75%</div>
+                        <div class="text-gray-600 font-semibold">Reduction in IT Costs</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-black gradient-text mb-2">99.9%</div>
+                        <div class="text-gray-600 font-semibold">System Uptime Guarantee</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-black gradient-text mb-2">3x</div>
+                        <div class="text-gray-600 font-semibold">Faster Development Cycles</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-black gradient-text mb-2">50%</div>
+                        <div class="text-gray-600 font-semibold">Improvement in Productivity</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IT Implementation Process -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-indigo-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-6xl font-black mb-6 animate-on-scroll text-gray-800">
+                    Our <span class="gradient-text">IT Implementation Process</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto animate-on-scroll">
+                    A systematic approach to IT transformation ensuring seamless implementation and maximum value delivery.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="relative mb-8">
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl font-bold text-white">01</span>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full animate-pulse-slow"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">IT Assessment & Analysis</h3>
+                    <p class="text-gray-600 leading-relaxed">Comprehensive evaluation of your current IT infrastructure, systems, and technology gaps to identify optimization opportunities.</p>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="relative mb-8">
+                        <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl font-bold text-white">02</span>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-green-400 rounded-full animate-bounce-slow"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Technology Strategy Design</h3>
+                    <p class="text-gray-600 leading-relaxed">Develop comprehensive IT strategies and technology roadmaps aligned with your business objectives and growth plans.</p>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="relative mb-8">
+                        <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl font-bold text-white">03</span>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-blue-400 rounded-full animate-pulse-slow"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Solution Development & Deployment</h3>
+                    <p class="text-gray-600 leading-relaxed">Build and deploy technology solutions using agile methodologies with rigorous testing and quality assurance.</p>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="relative mb-8">
+                        <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl font-bold text-white">04</span>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-purple-400 rounded-full animate-bounce-slow"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Monitoring & Optimization</h3>
+                    <p class="text-gray-600 leading-relaxed">Continuous monitoring, performance optimization, and proactive maintenance to ensure peak system performance.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Serve -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black mb-6 animate-on-scroll text-gray-800">
+                    Industries We <span class="gradient-text">Transform</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-on-scroll">
+                    Our IT solutions are tailored to meet the unique technology needs of various industries.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-university text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800">Banking & Finance</h4>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-heartbeat text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800">Healthcare</h4>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-shopping-cart text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800">E-commerce</h4>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-industry text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800">Manufacturing</h4>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-graduation-cap text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800">Education</h4>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-building text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800">Real Estate</h4>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="animate-on-scroll">
+                <h2 class="text-4xl lg:text-6xl font-black mb-8">
+                    Ready to <span class="text-yellow-300">Accelerate</span> Your Digital Journey?
+                </h2>
+                <p class="text-xl mb-12 leading-relaxed opacity-90">
+                    Transform your business with our cutting-edge IT solutions and strategic technology consulting. Let's build the future of your organization together.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <button class="bg-white text-blue-700 px-12 py-5 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-xl">
+                        Get Free IT Consultation
+                    </button>
+                    <button class="border-2 border-white/30 px-12 py-5 rounded-full font-bold hover:bg-white/10 transition-colors duration-300">
+                        Download Technology Guide
+                    </button>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="flex items-center justify-center space-x-3">
+                        <i class="fas fa-phone text-2xl text-yellow-300"></i>
+                        <div>
+                            <div class="font-semibold">Call Our IT Team</div>
+                            <div class="opacity-80">+1 (555) 123-4567</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center space-x-3">
+                        <i class="fas fa-envelope text-2xl text-yellow-300"></i>
+                        <div>
+                            <div class="font-semibold">Email Us</div>
+                            <div class="opacity-80">it@arihantstaffing.com</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center space-x-3">
+                        <i class="fas fa-calendar text-2xl text-yellow-300"></i>
+                        <div>
+                            <div class="font-semibold">Schedule Demo</div>
+                            <div class="opacity-80">Book Online</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-3xl font-black mb-4 gradient-text">Arihant Staffing</h3>
+                    <p class="text-gray-300 mb-6 max-w-md leading-relaxed">
+                        Your trusted partner for cutting-edge IT solutions and digital transformation services. We drive innovation and technology excellence that propels businesses forward.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </button>
+                        <button class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                        <button class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-6">IT Services</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Cloud Solutions</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cybersecurity</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Software Development</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Data Analytics</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Infrastructure Management</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Company</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Our Team</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Arihant Staffing. All rights reserved. | Driving Digital Innovation Since 2010</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animate-on-scroll class
+        document.querySelectorAll('.animate-on-scroll').forEach(function(element) {
+            observer.observe(element);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-white');
+                navbar.classList.remove('bg-white/95');
+            } else {
+                navbar.classList.add('bg-white/95');
+                navbar.classList.remove('bg-white');
+            }
+        });
+
+         console.log('🚀 Enhanced Arihant Staffing website loaded successfully!');
+
+        // Mobile menu functionality
+document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('hidden');
+});
+
+// Mobile services dropdown
+document.getElementById('mobile-services-btn').addEventListener('click', function() {
+    const servicesMenu = document.getElementById('mobile-services-menu');
+    const chevron = document.getElementById('mobile-chevron');
+    
+    servicesMenu.classList.toggle('hidden');
+    chevron.classList.toggle('rotate-180');
+});
+
+// Close mobile menu when clicking on nav links
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+    });
+});
+
+// Optional: Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const dropdown = document.getElementById('services-dropdown');
+    const servicesBtn = document.getElementById('services-btn');
+    
+    if (!servicesBtn.contains(event.target) && !dropdown.contains(event.target)) {
+        // Optional: Add class to force close if needed
+    }
+});
+    </script>
+</body>
+</html>

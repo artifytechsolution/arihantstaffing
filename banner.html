@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arihant Staffing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        * { font-family: 'Inter', sans-serif; }
+        
+        .services-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(30, 27, 75, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            min-width: 600px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .services-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(5px);
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            color: white;
+            cursor: pointer;
+        }
+
+        .service-item:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateX(5px);
+        }
+
+        .service-icon {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .service-page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        .service-page.active { display: block; }
+
+        .service-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .services-dropdown {
+                min-width: 90vw;
+                left: 5vw;
+                transform: none;
+            }
+            .services-dropdown.active {
+                transform: translateY(5px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <span class="text-3xl font-black gradient-text">Arihant Staffing</span>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-sky-600 transition-colors duration-300 font-semibold">Home</a>
+                    <a href="services.html" class="text-gray-700 hover:text-sky-600 transition-colors duration-300 font-semibold">Services</a>
+                    <a href="#about" class="text-sky-600 font-semibold">BPO Services</a>
+                    <a href="#contact" class="text-gray-700 hover:text-sky-600 transition-colors duration-300 font-semibold">Contact</a>
+                    <button class="gradient-bpo text-white px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform duration-300 shadow-lg">
+                        Get BPO Quote
+                    </button>
+                </div>
+                
+                <button class="lg:hidden text-gray-700" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="lg:hidden bg-white border-t border-gray-200 py-4 hidden" id="mobile-menu">
+            <div class="max-w-7xl mx-auto px-6 space-y-4">
+                <a href="index.html" class="block text-gray-700 hover:text-sky-600 font-semibold">Home</a>
+                <a href="services.html" class="block text-gray-700 hover:text-sky-600 font-semibold">Services</a>
+                <a href="#about" class="block text-sky-600 font-semibold">BPO Services</a>
+                <a href="#contact" class="block text-gray-700 hover:text-sky-600 font-semibold">Contact</a>
+                <button class="w-full gradient-bpo text-white px-6 py-2 rounded-full font-bold">Get BPO Quote</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Page -->
+    <div id="main-page" class="pt-20">
+        <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 to-purple-700">
+            <div class="text-center text-white p-8">
+                <h1 class="text-5xl font-bold mb-4">Arihant Staffing</h1>
+                <p class="text-xl opacity-90">Premier Staffing & Recruitment Solutions</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Pages -->
+    <div id="executive-search" class="service-page">
+        <div class="service-header">
+            <div class="text-center">
+                <i class="fas fa-search text-5xl mb-3 opacity-80"></i>
+                <h1 class="text-4xl font-bold mb-2">Executive Search</h1>
+                <p class="text-lg opacity-90">Find visionary leaders for your organization</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="ai-matching" class="service-page">
+        <div class="service-header">
+            <div class="text-center">
+                <i class="fas fa-robot text-5xl mb-3 opacity-80"></i>
+                <h1 class="text-4xl font-bold mb-2">AI-Powered Matching</h1>
+                <p class="text-lg opacity-90">Smart technology for perfect talent matches</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="tech-talent" class="service-page">
+        <div class="service-header">
+            <div class="text-center">
+                <i class="fas fa-laptop-code text-5xl mb-3 opacity-80"></i>
+                <h1 class="text-4xl font-bold mb-2">Tech Talent</h1>
+                <p class="text-lg opacity-90">Connect with top software engineers and IT specialists</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="temporary-staffing" class="service-page">
+        <div class="service-header">
+            <div class="text-center">
+                <i class="fas fa-clock text-5xl mb-3 opacity-80"></i>
+                <h1 class="text-4xl font-bold mb-2">Temporary Staffing</h1>
+                <p class="text-lg opacity-90">Flexible workforce solutions</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="direct-placement" class="service-page">
+        <div class="service-header">
+            <div class="text-center">
+                <i class="fas fa-handshake text-5xl mb-3 opacity-80"></i>
+                <h1 class="text-4xl font-bold mb-2">Direct Placement</h1>
+                <p class="text-lg opacity-90">Permanent hire solutions with guaranteed results</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="workforce-consulting" class="service-page">
+        <div class="service-header">
+            <div class="text-center">
+                <i class="fas fa-chart-bar text-5xl mb-3 opacity-80"></i>
+                <h1 class="text-4xl font-bold mb-2">Workforce Consulting</h1>
+                <p class="text-lg opacity-90">Strategic talent advisory for organizational success</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const servicesBtn = document.getElementById('services-btn');
+        const servicesDropdown = document.getElementById('services-dropdown');
+        const servicesArrow = document.getElementById('services-arrow');
+        const mobileServicesBtn = document.getElementById('mobile-services-btn');
+        const mobileServicesMenu = document.getElementById('mobile-services-menu');
+        const mobileServicesArrow = document.getElementById('mobile-services-arrow');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        // Desktop dropdown
+        servicesBtn?.addEventListener('mouseenter', () => {
+            servicesDropdown.classList.add('active');
+            servicesArrow.style.transform = 'rotate(180deg)';
+        });
+        
+        document.getElementById('services-dropdown-container')?.addEventListener('mouseleave', () => {
+            servicesDropdown.classList.remove('active');
+            servicesArrow.style.transform = 'rotate(0deg)';
+        });
+        
+        // Mobile dropdown
+        mobileServicesBtn?.addEventListener('click', () => {
+            mobileServicesMenu.classList.toggle('hidden');
+            const isOpen = !mobileServicesMenu.classList.contains('hidden');
+            mobileServicesArrow.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+        });
+        
+        // Mobile menu toggle
+        mobileMenuBtn?.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+        
+        function showMainPage() {
+            document.querySelectorAll('.service-page').forEach(page => page.classList.remove('active'));
+            document.getElementById('main-page').style.display = 'block';
+            mobileMenu?.classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+        
+        function showServicePage(serviceId) {
+            document.getElementById('main-page').style.display = 'none';
+            document.querySelectorAll('.service-page').forEach(page => page.classList.remove('active'));
+            document.getElementById(serviceId)?.classList.add('active');
+            
+            servicesDropdown?.classList.remove('active');
+            mobileServicesMenu?.classList.add('hidden');
+            mobileMenu?.classList.add('hidden');
+            
+            if (servicesArrow) servicesArrow.style.transform = 'rotate(0deg)';
+            if (mobileServicesArrow) mobileServicesArrow.style.transform = 'rotate(0deg)';
+            
+            window.scrollTo(0, 0);
+        }
+        
+        document.addEventListener('DOMContentLoaded', showMainPage);
+    </script>
+</body>
+</html>

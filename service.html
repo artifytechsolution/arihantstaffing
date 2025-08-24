@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Staffing Services - Arihant Staffing | Expert Recruitment Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-scroll {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-secondary {
+            border: 2px solid #667eea;
+            color: #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 200px;
+        }
+        
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-counter {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold gradient-text">Arihant Staffing</a>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-700 hover:text-purple-600 font-medium transition-colors">Services</a>
+                    <a href="#process" class="text-gray-700 hover:text-purple-600 font-medium transition-colors">Process</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-purple-600 font-medium transition-colors">Pricing</a>
+                    <a href="#industries" class="text-gray-700 hover:text-purple-600 font-medium transition-colors">Industries</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-purple-600 font-medium transition-colors">Reviews</a>
+                    <a href="#faq" class="text-gray-700 hover:text-purple-600 font-medium transition-colors">FAQ</a>
+                    <button class="btn-primary text-white px-6 py-2.5 rounded-lg font-medium">
+                        Get Started
+                    </button>
+                </div>
+                
+                <button class="lg:hidden text-gray-700" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="lg:hidden bg-white border-t hidden" id="mobile-menu">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#services" class="block py-2 text-gray-700 hover:text-purple-600">Services</a>
+                <a href="#process" class="block py-2 text-gray-700 hover:text-purple-600">Process</a>
+                <a href="#pricing" class="block py-2 text-gray-700 hover:text-purple-600">Pricing</a>
+                <a href="#industries" class="block py-2 text-gray-700 hover:text-purple-600">Industries</a>
+                <a href="#testimonials" class="block py-2 text-gray-700 hover:text-purple-600">Reviews</a>
+                <a href="#faq" class="block py-2 text-gray-700 hover:text-purple-600">FAQ</a>
+                <button class="w-full btn-primary text-white px-6 py-2.5 rounded-lg font-medium mt-4">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-24 bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8 fade-up">
+                    <div class="inline-flex items-center px-4 py-2 bg-white rounded-full text-purple-600 font-semibold text-sm shadow-sm">
+                        <i class="fas fa-star mr-2"></i>
+                        Rated #1 Staffing Agency 2025
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+                        Discover the <span class="gradient-text">Future</span> of<br>
+                        Professional <span class="gradient-text">Staffing</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-600 leading-relaxed max-w-2xl">
+                        Transform your hiring with AI-powered recruitment solutions. From executive search to temporary staffing, we connect exceptional talent with visionary companies across the globe.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Explore Our Services
+                        </button>
+                        <button class="btn-secondary px-8 py-4 rounded-lg font-semibold text-lg">
+                            <i class="fas fa-calendar mr-2"></i>
+                            Schedule Free Consultation
+                        </button>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-8 pt-8">
+                        <div class="text-center">
+                            <div class="stats-counter gradient-text" data-target="25000">0</div>
+                            <p class="text-gray-600 font-medium">Successful Placements</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="stats-counter gradient-text" data-target="750">0</div>
+                            <p class="text-gray-600 font-medium">Happy Clients</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="stats-counter gradient-text">98.5%</div>
+                            <p class="text-gray-600 font-medium">Success Rate</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative fade-up">
+                    <div class="bg-white rounded-2xl p-8 shadow-2xl">
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-2xl font-bold text-gray-900">Why Choose Us?</h3>
+                                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center">
+                                    <i class="fas fa-award text-white text-xl"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600"></i>
+                                    </div>
+                                    <span class="text-gray-700 font-medium">24-Hour Candidate Matching</span>
+                                </div>
+                                
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600"></i>
+                                    </div>
+                                    <span class="text-gray-700 font-medium">95% Match Accuracy Rate</span>
+                                </div>
+                                
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600"></i>
+                                    </div>
+                                    <span class="text-gray-700 font-medium">180-Day Replacement Guarantee</span>
+                                </div>
+                                
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600"></i>
+                                    </div>
+                                    <span class="text-gray-700 font-medium">Global Talent Network</span>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-4 border-t">
+                                <button class="w-full btn-primary text-white py-3 rounded-lg font-semibold">
+                                    Start Your Search Today
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                    Our Comprehensive <span class="gradient-text">Service Portfolio</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    From C-suite executives to specialized technical roles, we provide end-to-end recruitment solutions tailored to your industry and business needs.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-10">
+                <!-- Executive Search -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg fade-up">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-crown text-white text-2xl"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Executive Search</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Strategic executive placement services for C-suite, VP-level, and board positions. Our confidential search process identifies visionary leaders who drive organizational transformation.
+                    </p>
+                    
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>CEO, CTO, CFO & Board Placements</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Confidential & Retained Search</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Comprehensive Leadership Assessment</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Succession Planning & Advisory</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t pt-6 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Timeline</span>
+                            <span class="font-semibold text-gray-900">30-60 days</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Success Rate</span>
+                            <span class="font-semibold text-gray-900">96%</span>
+                        </div>
+                        <button class="w-full btn-primary text-white py-3 rounded-lg font-semibold">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- AI-Powered Matching -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg fade-up">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-white text-2xl"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">AI-Powered Matching</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Revolutionary artificial intelligence that analyzes 500+ data points including skills, experience, cultural fit, and performance predictors to ensure perfect matches.
+                    </p>
+                    
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>500+ Data Point Analysis</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Cultural Fit & Personality Matching</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Predictive Performance Modeling</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Real-time Candidate Scoring</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t pt-6 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Match Time</span>
+                            <span class="font-semibold text-gray-900">24 hours</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Accuracy Rate</span>
+                            <span class="font-semibold text-gray-900">95%</span>
+                        </div>
+                        <button class="w-full btn-secondary py-3 rounded-lg font-semibold">
+                            Try AI Demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Direct Placement -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg fade-up">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-handshake text-white text-2xl"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Direct Placement</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Permanent hiring solutions for building your core team. We identify professionals who align with your culture, values, and long-term strategic objectives.
+                    </p>
+                    
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Full-Time & Permanent Positions</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Comprehensive Skills Assessment</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Background & Reference Verification</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Onboarding Support & Follow-up</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t pt-6 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Timeline</span>
+                            <span class="font-semibold text-gray-900">7-21 days</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Retention Rate</span>
+                            <span class="font-semibold text-gray-900">94%</span>
+                        </div>
+                        <button class="w-full btn-secondary py-3 rounded-lg font-semibold">
+                            Start Hiring
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Temporary Staffing -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg fade-up">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Temporary Staffing</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Flexible workforce solutions for projects, seasonal demands, or interim coverage. Scale your team up or down with qualified professionals instantly.
+                    </p>
+                    
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Contract & Project-Based Staff</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Seasonal & Peak Period Coverage</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Interim Executive Placement</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>24/7 Support & Management</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t pt-6 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Deployment</span>
+                            <span class="font-semibold text-gray-900">24-72 hours</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Available Staff</span>
+                            <span class="font-semibold text-gray-900">50,000+</span>
+                        </div>
+                        <button class="w-full btn-secondary py-3 rounded-lg font-semibold">
+                            Get Quote
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tech Talent -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg fade-up">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Tech Talent Acquisition</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Specialized recruitment for technology roles. Access the largest network of pre-vetted software engineers, data scientists, and IT professionals.
+                    </p>
+                    
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Software Engineers & Developers</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>DevOps & Cloud Architecture</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Data Science & AI Specialists</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Technical Skills Verification</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t pt-6 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Talent Pool</span>
+                            <span class="font-semibold text-gray-900">250,000+</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Avg. Experience</span>
+                            <span class="font-semibold text-gray-900">5+ years</span>
+                        </div>
+                        <button class="w-full btn-secondary py-3 rounded-lg font-semibold">
+                            Browse Talent
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Workforce Consulting -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg fade-up">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Workforce Consulting</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Strategic workforce planning and optimization services to maximize your human capital ROI and improve organizational efficiency.
+                    </p>
+                    
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Workforce Planning & Analytics</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>HR Process Optimization</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Talent Acquisition Strategy</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-check text-green-500 mr-3 w-4"></i>
+                            <span>Custom Integration Solutions</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t pt-6 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Average ROI</span>
+                            <span class="font-semibold text-gray-900">300%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Implementation</span>
+                            <span class="font-semibold text-gray-900">30-90 days</span>
+                        </div>
+                        <button class="w-full btn-secondary py-3 rounded-lg font-semibold">
+                            Get Assessment
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                    Our Proven <span class="gradient-text">Recruitment Process</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    A streamlined, data-driven approach that combines cutting-edge AI technology with human expertise to deliver exceptional results every time.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-4 gap-8">
+                <div class="text-center fade-up">
+                    <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Discovery & Analysis</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Deep dive into your company culture, role requirements, and success criteria using our proprietary assessment framework.
+                    </p>
+                </div>
+
+                <div class="text-center fade-up">
+                    <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">AI-Powered Sourcing</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Our AI algorithms scan millions of profiles across 50+ platforms to identify perfect candidate matches for your role.
+                    </p>
+                </div>
+
+                <div class="text-center fade-up">
+                    <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Expert Validation</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Senior recruiters conduct thorough interviews, skills assessments, and cultural fit evaluations.
+                    </p>
+                </div>
+
+                <div class="text-center fade-up">
+                    <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                        4
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Seamless Placement</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Complete placement management including offer negotiation, onboarding support, and 180-day follow-up.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+   
+
+    <!-- Industries Section -->
+    <section id="industries" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                    <span class="gradient-text">Industry Expertise</span> That Matters
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Deep specialization across key industry sectors ensures we understand your unique challenges, requirements, and market dynamics.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow fade-up">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-laptop-code text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Technology</h3>
+                    <p class="text-sm text-gray-600 mb-4">Software, AI/ML, Cybersecurity, Cloud Infrastructure</p>
+                    <div class="text-sm font-semibold gradient-text">2,500+ Placements</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow fade-up">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heartbeat text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Healthcare</h3>
+                    <p class="text-sm text-gray-600 mb-4">Medical, Healthcare IT, Pharmaceutical Research</p>
+                    <div class="text-sm font-semibold gradient-text">1,800+ Placements</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow fade-up">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Finance</h3>
+                    <p class="text-sm text-gray-600 mb-4">Banking, FinTech, Investment Management</p>
+                    <div class="text-sm font-semibold gradient-text">1,200+ Placements</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow fade-up">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-industry text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Manufacturing</h3>
+                    <p class="text-sm text-gray-600 mb-4">Industrial Engineering, Supply Chain, Quality</p>
+                    <div class="text-sm font-semibold gradient-text">900+ Placements</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow fade-up">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-graduation-cap text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Education</h3>
+                    <p class="text-sm text-gray-600 mb-4">EdTech, Online Learning, Academic Administration</p>
+                    <div class="text-sm font-semibold gradient-text">750+ Placements</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow fade-up">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shopping-cart text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">E-commerce</h3>
+                    <p class="text-sm text-gray-600 mb-4">Digital Marketing, Logistics, Customer Experience</p>
+                    <div class="text-sm font-semibold gradient-text">1,100+ Placements</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow fade-up">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Clean Energy</h3>
+                    <p class="text-sm text-gray-600 mb-4">Renewable Energy, Sustainability, Green Tech</p>
+                    <div class="text-sm font-semibold gradient-text">400+ Placements</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow fade-up">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-palette text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Creative</h3>
+                    <p class="text-sm text-gray-600 mb-4">Design, Marketing, Content Creation, Media</p>
+                    <div class="text-sm font-semibold gradient-text">600+ Placements</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                    What Our <span class="gradient-text">Clients</span> Say
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Don't just take our word for it. Here's what industry leaders and Fortune 500 companies say about working with Arihant Staffing.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-10">
+                <div class="bg-gray-50 rounded-2xl p-8 fade-up">
+                    <div class="flex text-yellow-500 text-lg mb-6">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="text-lg text-gray-700 mb-6 leading-relaxed italic">
+                        "Arihant Staffing's AI-powered matching found us the perfect CTO in just 10 days. Their technology is revolutionary and their service is unmatched."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            JD
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-900">Jennifer Davis</div>
+                            <div class="text-sm text-gray-600">CEO, TechStart Innovations</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8 fade-up">
+                    <div class="flex text-yellow-500 text-lg mb-6">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="text-lg text-gray-700 mb-6 leading-relaxed italic">
+                        "Outstanding results! They helped us scale our engineering team by 400% in 8 months. Every hire has been exceptional."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            SM
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-900">Sarah Martinez</div>
+                            <div class="text-sm text-gray-600">CTO, GrowthScale Corp</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8 fade-up">
+                    <div class="flex text-yellow-500 text-lg mb-6">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="text-lg text-gray-700 mb-6 leading-relaxed italic">
+                        "The quality of candidates is phenomenal. Every hire has exceeded expectations. Their process is thorough and professional."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            MJ
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-900">Michael Johnson</div>
+                            <div class="text-sm text-gray-600">VP Engineering, Enterprise Solutions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-20 fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                    Frequently Asked <span class="gradient-text">Questions</span>
+                </h2>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    Everything you need to know about our services and process.
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white rounded-xl shadow-sm fade-up">
+                    <button class="w-full text-left p-6 focus:outline-none" onclick="toggleAccordion(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-gray-900">How does your AI-powered matching work?</h3>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600 leading-relaxed">
+                            Our proprietary AI analyzes 500+ data points including technical skills, experience level, cultural preferences, communication style, and performance history. It cross-references these with your company's requirements, culture, and success patterns to generate highly accurate match scores and recommendations.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm fade-up">
+                    <button class="w-full text-left p-6 focus:outline-none" onclick="toggleAccordion(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-gray-900">What's your average time to placement?</h3>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600 leading-relaxed">
+                            Our average time to placement varies by role complexity: 24-72 hours for temporary positions, 7-14 days for direct placements, and 30-60 days for executive searches. Our AI-powered matching significantly reduces traditional recruitment timelines while maintaining quality.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm fade-up">
+                    <button class="w-full text-left p-6 focus:outline-none" onclick="toggleAccordion(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-gray-900">Do you offer replacement guarantees?</h3>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600 leading-relaxed">
+                            Yes! We offer comprehensive replacement guarantees: 90 days for temporary placements, 180 days for permanent hires, and 1 year for executive positions. If a candidate doesn't work out within the guarantee period, we'll provide a replacement at no additional cost.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm fade-up">
+                    <button class="w-full text-left p-6 focus:outline-none" onclick="toggleAccordion(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-gray-900">What industries do you specialize in?</h3>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600 leading-relaxed">
+                            We specialize in Technology, Healthcare, Finance, Manufacturing, E-commerce, Clean Energy, Education, and Creative industries. Our team includes specialists with deep domain expertise in each sector, ensuring we understand the unique requirements and challenges of your industry.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm fade-up">
+                    <button class="w-full text-left p-6 focus:outline-none" onclick="toggleAccordion(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-gray-900">How do you ensure candidate quality?</h3>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600 leading-relaxed">
+                            Our multi-stage vetting process includes AI-powered initial screening, comprehensive skills assessments, behavioral interviews, reference checks, and background verification. We also conduct cultural fit analysis and predictive performance modeling to ensure long-term success and retention.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & CTA Section -->
+    <section class="py-24 gradient-bg text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-up">
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        Ready to Transform Your <span class="text-yellow-300">Hiring Process?</span>
+                    </h2>
+                    <p class="text-xl mb-8 opacity-90 leading-relaxed">
+                        Join 750+ companies that trust Arihant Staffing for their talent acquisition needs. Experience the future of recruitment with our AI-powered solutions.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span>Free consultation & needs assessment</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span>Custom talent acquisition strategy</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span>24/7 dedicated support team</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+                            <i class="fas fa-calendar mr-2"></i>
+                            Schedule Free Consultation
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors">
+                            <i class="fas fa-phone mr-2"></i>
+                            Call: (555) 123-4567
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="fade-up">
+                    <form class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 space-y-6">
+                        <h3 class="text-2xl font-bold mb-6">Get Started Today</h3>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="Your name">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email Address</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="your@email.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Company Name</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="Your company">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Hiring Needs</label>
+                            <select class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-white/50">
+                                <option value="">Select your primary need</option>
+                                <option value="executive">Executive Search</option>
+                                <option value="direct">Direct Placement</option>
+                                <option value="temporary">Temporary Staffing</option>
+                                <option value="tech">Tech Talent</option>
+                                <option value="consulting">Workforce Consulting</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-white text-purple-600 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+                            Get Free Consultation
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <div class="lg:col-span-2">
+                    <div class="text-2xl font-bold gradient-text mb-6">Arihant Staffing</div>
+                    <p class="text-gray-400 mb-6 max-w-md leading-relaxed">
+                        Revolutionizing recruitment through AI-powered matching and human expertise. Your trusted partner in talent acquisition since 2008.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Services</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#services" class="hover:text-white transition-colors">Executive Search</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">AI-Powered Matching</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Direct Placement</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Temporary Staffing</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Tech Talent</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Workforce Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contact</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-purple-500"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-purple-500"></i>
+                            <span>hello@arihantstaffing.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-purple-500"></i>
+                            <span>San Francisco, CA</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Arihant Staffing. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scroll');
+            } else {
+                navbar.classList.remove('navbar-scroll');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Fade up animation
+        const fadeElements = document.querySelectorAll('.fade-up');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Stats counter animation
+        const statsCounters = document.querySelectorAll('.stats-counter[data-target]');
+        
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    let current = 0;
+                    const increment = target / 100;
+                    
+                    const updateCounter = () => {
+                        if (current < target) {
+                            current += increment;
+                            counter.textContent = Math.floor(current).toLocaleString();
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target.toLocaleString();
+                        }
+                    };
+                    
+                    updateCounter();
+                    statsObserver.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statsCounters.forEach(counter => statsObserver.observe(counter));
+
+        // Accordion functionality
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            // Close all other accordions
+            document.querySelectorAll('.accordion-content').forEach(item => {
+                if (item !== content) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            // Toggle current accordion
+            content.classList.toggle('active');
+            icon.style.transform = content.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        console.log('🚀 Comprehensive Services page loaded successfully!');
+    </script>
+</body>
+</html>
