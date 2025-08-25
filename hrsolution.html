@@ -101,170 +101,176 @@
 
 <body class="bg-white min-h-screen text-gray-800">
     
-<nav class="fixed top-0 w-full z-50 transition-all duration-500 bg-white/90 backdrop-blur-lg border-b border-gray-200 shadow-sm" id="navbar">
-    <div class="max-w-7xl mx-auto px-6 py-4">
-        <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <span class="text-3xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Arihant Staffing</span>
-            </div>
-            
-            <div class="hidden lg:flex items-center space-x-8">
-                 <a href="index.html" class="block text-gray-700 hover:text-purple-600 font-semibold">Home</a>
-               <a href="index2.html" class="block text-gray-700 hover:text-purple-600 font-semibold">Home2 demo</a>
-                
-                <!-- Services Dropdown -->
-                <div class="relative group">
-                    <button class="nav-link text-gray-700 hover:text-purple-600 transition-colors duration-300 font-semibold flex items-center space-x-1" id="services-btn">
-                        <span>Services</span>
-                        <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
-                    </button>
-                    
-                    <!-- Full Width Dropdown Menu -->
-                    <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-6xl bg-white backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0" id="services-dropdown">
-                        <div class="p-8">
-                            <!-- Services Grid - 2 Columns on Large Screens -->
-                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                                <!-- Staff Augmentation -->
-                                <a href="#staff-augmentation" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
-                                    <div class="flex-shrink-0">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center">
-                                            <i class="fas fa-user-plus text-white text-2xl"></i>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">Staff Augmentation</h4>
-                                        <p class="text-gray-600 text-base mt-2">Scale your team with skilled professionals and expand your workforce efficiently</p>
-                                    </div>
-                                </a>
-                                
-                                <!-- HR Solutions -->
-                                <a href="hrsolution.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
-                                    <div class="flex-shrink-0">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center">
-                                            <i class="fas fa-users-cog text-white text-2xl"></i>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">HR Solutions</h4>
-                                        <p class="text-gray-600 text-base mt-2">Complete human resource management and strategic HR consulting services</p>
-                                    </div>
-                                </a>
-                                
-                                <!-- Web Development -->
-                                <a href="itconsultant.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
-                                    <div class="flex-shrink-0">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
-                                            <i class="fas fa-code text-white text-2xl"></i>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">Web Development</h4>
-                                        <p class="text-gray-600 text-base mt-2">Custom websites and web applications built with modern technologies</p>
-                                    </div>
-                                </a>
-                                
-                                <!-- IT Services and Consulting -->
-                                <a href="itconsultant.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
-                                    <div class="flex-shrink-0">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
-                                            <i class="fas fa-laptop-code text-white text-2xl"></i>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">IT Services & Consulting</h4>
-                                        <p class="text-gray-600 text-base mt-2">Technology solutions and strategic IT consulting for business growth</p>
-                                    </div>
-                                </a>
-                                
-                                <!-- Business Process Outsourcing -->
-                                <a href="bso.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
-                                    <div class="flex-shrink-0">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center">
-                                            <i class="fas fa-chart-network text-white text-2xl"></i>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">Business Process Outsourcing</h4>
-                                        <p class="text-gray-600 text-base mt-2">Streamline operations with comprehensive BPO solutions and services</p>
-                                    </div>
-                                </a>
-                                
-                                <!-- US Healthcare State License -->
-                                <a href="healthcareservices.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
-                                    <div class="flex-shrink-0">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-rose-500 to-pink-600 rounded-xl flex items-center justify-center">
-                                            <i class="fas fa-heartbeat text-white text-2xl"></i>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">US Healthcare State License</h4>
-                                        <p class="text-gray-600 text-base mt-2">Healthcare licensing and compliance support for US state requirements</p>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                            <!-- Bottom Section with CTA -->
-                            <div class="mt-8 pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-                                <div class="text-center sm:text-left">
-                                    <h5 class="text-gray-800 font-bold text-lg">Need a Custom Solution?</h5>
-                                    <p class="text-gray-600 text-sm">Let's discuss your specific requirements</p>
-                                </div>
-                                <div class="flex gap-3">
-                                    <a href="#all-services" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105">
-                                        View All Services
-                                    </a>
-                                    <a href="#contact" class="px-6 py-3 border-2 border-purple-600 text-purple-600 font-bold rounded-xl hover:bg-purple-50 transition-all duration-300">
-                                        Get Quote
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                <a href="#about" class="nav-link text-gray-700 hover:text-purple-600 transition-colors duration-300 font-semibold">About</a>
-                <a href="#testimonials" class="nav-link text-gray-700 hover:text-purple-600 transition-colors duration-300 font-semibold">Reviews</a>
-                <button class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform duration-300 shadow-lg">
-                    Contact us
-                </button>
-            </div>
-            
-            <button class="lg:hidden text-gray-700 hover:text-purple-600" id="mobile-menu-btn">
-                <i class="fas fa-bars text-2xl"></i>
+<header>
+  <nav class="fixed top-0 w-full z-50 transition-all duration-500 bg-gray-900 text-white backdrop-blur-lg border-b border-gray-700 shadow-md" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 py-2">
+      <div class="flex items-center justify-between">
+        
+        <!-- Logo -->
+        <div class="flex items-center space-x-3">
+          <img src="logo.png" alt="Arihant Staffing Logo" class="ml-12 h-[90px] w-[200px] object-contain">
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="index2.html" class="block text-gray-300 hover:text-purple-400 font-semibold">Home</a>
+          
+          <!-- Services Dropdown -->
+          <div class="relative group">
+            <button class="nav-link text-gray-300 hover:text-purple-400 transition-colors duration-300 font-semibold flex items-center space-x-1" id="services-btn">
+              <span>Services</span>
+              <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
             </button>
-        </div>
-    </div>
-    
-    <!-- Mobile Menu -->
-    <div class="lg:hidden bg-white border-t border-gray-200 py-4 hidden" id="mobile-menu">
-        <div class="max-w-7xl mx-auto px-6 space-y-4">
-            <a href="#home" class="block text-gray-700 hover:text-purple-600 font-semibold">Home</a>
-            
-            <!-- Mobile Services Dropdown -->
-            <div class="mobile-services">
-                <button class="flex items-center justify-between w-full text-gray-700 hover:text-purple-600 font-semibold" id="mobile-services-btn">
-                    <span>Services</span>
-                    <i class="fas fa-chevron-down transition-transform duration-300" id="mobile-chevron"></i>
-                </button>
-                <div class="hidden mt-3 ml-4 space-y-3" id="mobile-services-menu">
-                    <a href="#staff-augmentation" class="block text-gray-600 hover:text-purple-600 text-sm">Staff Augmentation</a>
-                    <a href="hrsolution.html" class="block text-gray-600 hover:text-purple-600 text-sm">HR Solutions</a>
-                    <a href="itconsultant.html" class="block text-gray-600 hover:text-purple-600 text-sm">Web Development</a>
-                    <a href="itconsultant.html" class="block text-gray-600 hover:text-purple-600 text-sm">IT Services & Consulting</a>
-                    <a href="bso.html" class="block text-gray-600 hover:text-purple-600 text-sm">Business Process Outsourcing</a>
-                    <a href="healthcareservices.html" class="block text-gray-600 hover:text-purple-600 text-sm">US Healthcare State License</a>
+
+            <!-- Full Width Dropdown -->
+            <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-6xl bg-gray-800 backdrop-blur-xl border border-gray-700 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0" id="services-dropdown">
+              <div class="p-8">
+                <!-- Services Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                  <!-- Staff Augmentation -->
+                  <a href="rpo.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-700 transition-all duration-300 group border border-gray-700 hover:border-purple-400 hover:shadow-md">
+                    <div class="flex-shrink-0">
+                      <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-user-plus text-white text-2xl"></i>
+                      </div>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="text-white font-bold text-xl group-hover:text-purple-400">Recruitment Process Outsourcing</h4>
+                      <p class="text-gray-300 text-base mt-2">Scale your team with skilled professionals and expand your workforce efficiently</p>
+                    </div>
+                  </a>
+
+                  <!-- HR Solutions -->
+                  <a href="hrsolution.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-700 transition-all duration-300 group border border-gray-700 hover:border-purple-400 hover:shadow-md">
+                    <div class="flex-shrink-0">
+                      <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-users-cog text-white text-2xl"></i>
+                      </div>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="text-white font-bold text-xl group-hover:text-purple-400">HR Solutions</h4>
+                      <p class="text-gray-300 text-base mt-2">Complete human resource management and strategic HR consulting services</p>
+                    </div>
+                  </a>
+
+                  <!-- Web Development -->
+                  <a href="itconsultant.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-700 transition-all duration-300 group border border-gray-700 hover:border-purple-400 hover:shadow-md">
+                    <div class="flex-shrink-0">
+                      <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                      </div>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="text-white font-bold text-xl group-hover:text-purple-400">Web Development</h4>
+                      <p class="text-gray-300 text-base mt-2">Custom websites and web applications built with modern technologies</p>
+                    </div>
+                  </a>
+
+                  <!-- IT Services -->
+                  <a href="itconsultant.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-700 transition-all duration-300 group border border-gray-700 hover:border-purple-400 hover:shadow-md">
+                    <div class="flex-shrink-0">
+                      <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-white text-2xl"></i>
+                      </div>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="text-white font-bold text-xl group-hover:text-purple-400">IT Services & Consulting</h4>
+                      <p class="text-gray-300 text-base mt-2">Technology solutions and strategic IT consulting for business growth</p>
+                    </div>
+                  </a>
+
+                  <!-- BPO -->
+                  <a href="bso.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-700 transition-all duration-300 group border border-gray-700 hover:border-purple-400 hover:shadow-md">
+                    <div class="flex-shrink-0">
+                      <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-network-wired text-white text-2xl"></i>
+                      </div>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="text-white font-bold text-xl group-hover:text-purple-400">Business Process Outsourcing</h4>
+                      <p class="text-gray-300 text-base mt-2">Streamline operations with comprehensive BPO solutions and services</p>
+                    </div>
+                  </a>
+
+                  <!-- Healthcare -->
+                  <a href="healthcareservices.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-700 transition-all duration-300 group border border-gray-700 hover:border-purple-400 hover:shadow-md">
+                    <div class="flex-shrink-0">
+                      <div class="w-14 h-14 bg-gradient-to-br from-rose-500 to-pink-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-white text-2xl"></i>
+                      </div>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="text-white font-bold text-xl group-hover:text-purple-400">US Healthcare State License</h4>
+                      <p class="text-gray-300 text-base mt-2">Healthcare licensing and compliance support for US state requirements</p>
+                    </div>
+                  </a>
                 </div>
+
+                <!-- Bottom CTA -->
+                <div class="mt-8 pt-6 border-t border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div class="text-center sm:text-left">
+                    <h5 class="text-white font-bold text-lg">Need a Custom Solution?</h5>
+                    <p class="text-gray-300 text-sm">Let's discuss your specific requirements</p>
+                  </div>
+                  <div class="flex gap-3">
+                    <a href="#all-services" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105">
+                      View All Services
+                    </a>
+                    <a href="#contact" class="px-6 py-3 border-2 border-purple-500 text-purple-400 font-bold rounded-xl hover:bg-purple-600 hover:text-white transition-all duration-300">
+                      Get Quote
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-            
-            <a href="#process" class="block text-gray-700 hover:text-purple-600 font-semibold">Process</a>
-            <a href="#industries" class="block text-gray-700 hover:text-purple-600 font-semibold">Industries</a>
-            <a href="#about" class="block text-gray-700 hover:text-purple-600 font-semibold">About</a>
-            <a href="#testimonials" class="block text-gray-700 hover:text-purple-600 font-semibold">Reviews</a>
-            <button class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-full font-bold">Contact Us</button>
+          </div>
+
+          <a href="about.html" class="nav-link text-gray-300 hover:text-purple-400 font-semibold">About</a>
+          <a href="#testimonials" class="nav-link text-gray-300 hover:text-purple-400 font-semibold">Contact Us</a>
+
+          <button class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform duration-300 shadow-lg">
+            Connect With Us
+          </button>
         </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden text-gray-300 hover:text-purple-400" id="mobile-menu-btn">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
     </div>
-</nav>
+
+    <!-- Mobile Menu -->
+    <div class="lg:hidden bg-gray-900 border-t border-gray-700 py-4 hidden" id="mobile-menu">
+      <div class="max-w-7xl mx-auto px-6 space-y-4">
+        <a href="#home" class="block text-gray-300 hover:text-purple-400 font-semibold">Home</a>
+
+        <!-- Mobile Services Dropdown -->
+        <div class="mobile-services">
+          <button class="flex items-center justify-between w-full text-gray-300 hover:text-purple-400 font-semibold" id="mobile-services-btn">
+            <span>Services</span>
+            <i class="fas fa-chevron-down transition-transform duration-300" id="mobile-chevron"></i>
+          </button>
+          <div class="hidden mt-3 ml-4 space-y-3" id="mobile-services-menu">
+            <a href="#staff-augmentation" class="block text-gray-400 hover:text-purple-400 text-sm">Staff Augmentation</a>
+            <a href="hrsolution.html" class="block text-gray-400 hover:text-purple-400 text-sm">HR Solutions</a>
+            <a href="itconsultant.html" class="block text-gray-400 hover:text-purple-400 text-sm">Web Development</a>
+            <a href="itconsultant.html" class="block text-gray-400 hover:text-purple-400 text-sm">IT Services & Consulting</a>
+            <a href="bso.html" class="block text-gray-400 hover:text-purple-400 text-sm">Business Process Outsourcing</a>
+            <a href="healthcareservices.html" class="block text-gray-400 hover:text-purple-400 text-sm">US Healthcare State License</a>
+          </div>
+        </div>
+
+        <a href="#process" class="block text-gray-300 hover:text-purple-400 font-semibold">Process</a>
+        <a href="#industries" class="block text-gray-300 hover:text-purple-400 font-semibold">Industries</a>
+        <a href="#about" class="block text-gray-300 hover:text-purple-400 font-semibold">About</a>
+        <a href="#testimonials" class="block text-gray-300 hover:text-purple-400 font-semibold">Reviews</a>
+        <button class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full font-bold">Contact Us</button>
+      </div>
+    </div>
+  </nav>
+</header>
 
     <!-- HR Solutions Banner Section -->
     <section class="relative pt-24 pb-20 bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 overflow-hidden">
@@ -306,7 +312,7 @@
                     <!-- Key Stats -->
                     <div class="grid grid-cols-3 gap-8 pt-8 animate-on-scroll">
                         <div class="text-center">
-                            <div class="text-4xl font-black gradient-text">1250+</div>
+                            <div class="text-4xl font-black gradient-text">550+</div>
                             <div class="text-sm text-gray-600 font-medium">Employees Managed</div>
                         </div>
                         <div class="text-center">
@@ -321,65 +327,66 @@
                 </div>
                 
                 <!-- Right Visual -->
-                <div class="relative animate-on-scroll">
-                    <div class="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
-                        <!-- HR Dashboard Mock -->
-                        <div class="space-y-6">
-                            <div class="flex items-center justify-between mb-6">
-                                <h3 class="text-xl font-bold text-gray-800">HR Dashboard</h3>
-                                <div class="flex space-x-2">
-                                    <div class="w-3 h-3 bg-red-400 rounded-full"></div>
-                                    <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                                    <div class="w-3 h-3 bg-green-400 rounded-full"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-100 animate-float">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-users text-white"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-bold text-gray-800">Active Employees</div>
-                                        <div class="text-sm text-gray-600">Department wise breakdown</div>
-                                    </div>
-                                </div>
-                                <div class="text-green-500 font-bold text-lg">+12%</div>
-                            </div>
-                            
-                            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-100 animate-float" style="animation-delay: 0.5s;">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-clock text-white"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-bold text-gray-800">Avg. Recruitment Time</div>
-                                        <div class="text-sm text-gray-600">From job posting to hire</div>
-                                    </div>
-                                </div>
-                                <div class="text-green-500 font-bold text-lg">15 Days</div>
-                            </div>
-                            
-                            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-100 animate-float" style="animation-delay: 1s;">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-trophy text-white"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-bold text-gray-800">Performance Score</div>
-                                        <div class="text-sm text-gray-600">Overall company rating</div>
-                                    </div>
-                                </div>
-                                <div class="text-green-500 font-bold text-lg">4.8/5</div>
-                            </div>
-                        </div>
-                        
-                        <!-- Floating Elements -->
-                        <div class="absolute -top-6 -right-6 w-12 h-12 bg-purple-500 rounded-full opacity-60 animate-bounce-slow"></div>
-                        <div class="absolute -bottom-6 -left-6 w-8 h-8 bg-pink-500 rounded-full opacity-60 animate-pulse-slow"></div>
-                        <div class="absolute top-1/2 -right-8 w-6 h-6 bg-blue-500 rounded-full opacity-60 animate-bounce-slow" style="animation-delay: 1.5s;"></div>
+               <div class="relative animate-on-scroll">
+    <div class="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
+        <!-- HR Solutions Mock -->
+        <div class="space-y-6">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-xl font-bold text-gray-800">HR Solutions Dashboard</h3>
+                <div class="flex space-x-2">
+                    <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                    <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                    <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                </div>
+            </div>
+            
+            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-100 animate-float">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-users text-white"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-800">Talent Acquisition</div>
+                        <div class="text-sm text-gray-600">End-to-end recruitment & staffing</div>
                     </div>
                 </div>
+                <div class="text-green-500 font-bold text-lg">100% Coverage</div>
+            </div>
+            
+            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-100 animate-float" style="animation-delay: 0.5s;">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-clipboard-list text-white"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-800">HR Compliance</div>
+                        <div class="text-sm text-gray-600">Policies, contracts & legal guidance</div>
+                    </div>
+                </div>
+                <div class="text-green-500 font-bold text-lg">Always Updated</div>
+            </div>
+            
+            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-100 animate-float" style="animation-delay: 1s;">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-handshake text-white"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-800">Employee Engagement</div>
+                        <div class="text-sm text-gray-600">Performance, retention & culture</div>
+                    </div>
+                </div>
+                <div class="text-green-500 font-bold text-lg">High Impact</div>
+            </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute -top-6 -right-6 w-12 h-12 bg-purple-500 rounded-full opacity-60 animate-bounce-slow"></div>
+        <div class="absolute -bottom-6 -left-6 w-8 h-8 bg-pink-500 rounded-full opacity-60 animate-pulse-slow"></div>
+        <div class="absolute top-1/2 -right-8 w-6 h-6 bg-blue-500 rounded-full opacity-60 animate-bounce-slow" style="animation-delay: 1.5s;"></div>
+    </div>
+</div>
+
             </div>
         </div>
         
@@ -399,7 +406,7 @@
                     Complete <span class="gradient-text">HR Service Suite</span>
                 </h2>
                 <p class="text-xl text-gray-600 max-w-4xl mx-auto animate-on-scroll">
-                    From talent acquisition to employee development, we provide comprehensive HR solutions that cover every aspect of human resource management.
+                    From Talent Acquisition To Employee Development, We Provide Comprehensive HR Solutions That Cover Every Aspect Of Human Resource Management
                 </p>
             </div>
 
@@ -589,7 +596,7 @@
                     <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-award text-2xl text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">10+ Years Experience</h3>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">15+ Years Experience</h3>
                     <p class="text-gray-600">Decade-long expertise in HR management across diverse industries and company sizes.</p>
                 </div>
                 
@@ -598,7 +605,7 @@
                         <i class="fas fa-users text-2xl text-white"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 text-gray-800">1250+ Employees Managed</h3>
-                    <p class="text-gray-600">Successfully managing HR operations for thousands of employees across multiple organizations.</p>
+                    <p class="text-gray-600">Successfully managing HR operations for hundreds of employees across multiple organizations.</p>
                 </div>
                 
                 <div class="animate-on-scroll bg-white border border-gray-200 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300">
@@ -905,20 +912,20 @@
         
 
         // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                navbar.classList.add('bg-white');
-                navbar.classList.remove('bg-white/95');
-            } else {
-                navbar.classList.add('bg-white/95');
-                navbar.classList.remove('bg-white');
-            }
-        });
+    window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('nav');
+    if (window.scrollY > 100) {
+        navbar.classList.add('bg-gray-900', 'border-gray-700', 'shadow-md');
+        navbar.classList.remove('bg-gray-800/90');
+    } else {
+        navbar.classList.add('bg-gray-800/90');
+        navbar.classList.remove('bg-gray-900');
+    }
+});
 
-         console.log('🚀 Enhanced Arihant Staffing website loaded successfully!');
+console.log('🚀 Enhanced Arihant Staffing website loaded successfully!');
 
-        // Mobile menu functionality
+// Mobile menu functionality
 document.getElementById('mobile-menu-btn').addEventListener('click', function() {
     const mobileMenu = document.getElementById('mobile-menu');
     mobileMenu.classList.toggle('hidden');
@@ -949,6 +956,7 @@ document.addEventListener('click', function(event) {
         // Optional: Add class to force close if needed
     }
 });
+
     </script>
 </body>
 </html>
