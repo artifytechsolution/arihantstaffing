@@ -53,6 +53,110 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
         }
+
+        /* Enhanced Banner Background Effects */
+        .banner-enhanced {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        }
+        
+        .animated-gradient-bg {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle at 30% 50%, rgba(102, 126, 234, 0.4) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(240, 147, 251, 0.4) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 80%, rgba(118, 75, 162, 0.4) 0%, transparent 50%);
+            animation: rotateGradient 20s linear infinite;
+        }
+        
+        @keyframes rotateGradient {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        
+        .floating-orb-enhanced {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.8;
+            animation: floatOrb 12s ease-in-out infinite;
+        }
+        
+        .orb-primary {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.6) 0%, rgba(102, 126, 234, 0.1) 40%, transparent 70%);
+            top: 15%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+        
+        .orb-secondary {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(240, 147, 251, 0.6) 0%, rgba(240, 147, 251, 0.1) 40%, transparent 70%);
+            top: 50%;
+            right: 10%;
+            animation-delay: -4s;
+        }
+        
+        .orb-accent {
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(118, 75, 162, 0.6) 0%, rgba(118, 75, 162, 0.1) 40%, transparent 70%);
+            bottom: 25%;
+            left: 45%;
+            animation-delay: -8s;
+        }
+        
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            25% { transform: translate(30px, -40px) scale(1.1) rotate(90deg); }
+            50% { transform: translate(-20px, 30px) scale(0.9) rotate(180deg); }
+            75% { transform: translate(40px, 20px) scale(1.05) rotate(270deg); }
+        }
+        
+        .enhanced-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .particle-enhanced {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleFloatEnhanced 18s infinite linear;
+        }
+        
+        @keyframes particleFloatEnhanced {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            5% {
+                opacity: 1;
+                transform: translateY(95vh) translateX(10px) rotate(18deg) scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: translateY(50vh) translateX(50px) rotate(180deg) scale(0.5);
+            }
+            95% {
+                opacity: 1;
+                transform: translateY(5vh) translateX(90px) rotate(342deg) scale(1);
+            }
+            100% {
+                transform: translateY(-5vh) translateX(100px) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
         
         .floating-animation {
             animation: floating 6s ease-in-out infinite;
@@ -172,16 +276,22 @@
             .parallax-bg {
                 background-attachment: scroll;
             }
+            .orb-primary, .orb-secondary, .orb-accent {
+                width: 200px;
+                height: 200px;
+            }
         }
+        
         @keyframes slide {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .animate-slide {
-      display: flex;
-      width: max-content;
-      animation: slide 25s linear infinite;
-    }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .animate-slide {
+            display: flex;
+            width: max-content;
+            animation: slide 25s linear infinite;
+        }
     </style>
 </head>
 <body class="overflow-x-hidden custom-cursor">
@@ -192,380 +302,442 @@
     <div class="particle-bg fixed inset-0 pointer-events-none z-0" id="particles"></div>
     
     <!-- Navigation -->
-   <nav class="fixed top-0 w-full z-50 transition-all duration-500 bg-white/90 backdrop-blur-lg border-b border-gray-200 shadow-sm" id="navbar">
-    <div class="max-w-7xl mx-auto px-6 py-4">
-        <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <span class="text-3xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Arihant Staffing</span>
-            </div>
-            
-            <div class="hidden lg:flex items-center space-x-8">
-            <a href="index.html" class="block text-gray-700 hover:text-purple-600 font-semibold">Home</a>
-            <a href="index2.html" class="block text-gray-700 hover:text-purple-600 font-semibold">Home2 demo</a>
-             
-                
-                <!-- Services Dropdown -->
-                <div class="relative group">
-                    <button class="nav-link text-gray-700 hover:text-purple-600 transition-colors duration-300 font-semibold flex items-center space-x-1" id="services-btn">
-                        <span>Services</span>
-                        <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
-                    </button>
-                    
-                    <!-- Full Width Dropdown Menu -->
-                    <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-6xl bg-white backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0" id="services-dropdown">
-                        <div class="p-8">
-                            <!-- Services Grid - 2 Columns on Large Screens -->
-                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                                <!-- Staff Augmentation -->
-                                <a href="#staff-augmentation" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
-                                    <div class="flex-shrink-0">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center">
-                                            <i class="fas fa-user-plus text-white text-2xl"></i>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">Staff Augmentation</h4>
-                                        <p class="text-gray-600 text-base mt-2">Scale your team with skilled professionals and expand your workforce efficiently</p>
-                                    </div>
-                                </a>
-                                
-                                <!-- HR Solutions -->
-                                <a href="hrsolution.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
-                                    <div class="flex-shrink-0">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center">
-                                            <i class="fas fa-users-cog text-white text-2xl"></i>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">HR Solutions</h4>
-                                        <p class="text-gray-600 text-base mt-2">Complete human resource management and strategic HR consulting services</p>
-                                    </div>
-                                </a>
-                                
-                                <!-- Web Development -->
-                                <a href="itconsultant.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
-                                    <div class="flex-shrink-0">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
-                                            <i class="fas fa-code text-white text-2xl"></i>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">Web Development</h4>
-                                        <p class="text-gray-600 text-base mt-2">Custom websites and web applications built with modern technologies</p>
-                                    </div>
-                                </a>
-                                
-                                <!-- IT Services and Consulting -->
-                                <a href="itconsultant.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
-                                    <div class="flex-shrink-0">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
-                                            <i class="fas fa-laptop-code text-white text-2xl"></i>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">IT Services & Consulting</h4>
-                                        <p class="text-gray-600 text-base mt-2">Technology solutions and strategic IT consulting for business growth</p>
-                                    </div>
-                                </a>
-                                
-                                <!-- Business Process Outsourcing -->
-                                <a href="bso.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
-                                    <div class="flex-shrink-0">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center">
-                                            <i class="fas fa-chart-network text-white text-2xl"></i>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">Business Process Outsourcing</h4>
-                                        <p class="text-gray-600 text-base mt-2">Streamline operations with comprehensive BPO solutions and services</p>
-                                    </div>
-                                </a>
-                                
-                                <!-- US Healthcare State License -->
-                                <a href="healthcareservices.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-50 transition-all duration-300 group border border-gray-100 hover:border-purple-200 hover:shadow-md">
-                                    <div class="flex-shrink-0">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-rose-500 to-pink-600 rounded-xl flex items-center justify-center">
-                                            <i class="fas fa-heartbeat text-white text-2xl"></i>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h4 class="text-gray-800 font-bold text-xl group-hover:text-purple-600 transition-colors">US Healthcare State License</h4>
-                                        <p class="text-gray-600 text-base mt-2">Healthcare licensing and compliance support for US state requirements</p>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                            <!-- Bottom Section with CTA -->
-                            <div class="mt-8 pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-                                <div class="text-center sm:text-left">
-                                    <h5 class="text-gray-800 font-bold text-lg">Need a Custom Solution?</h5>
-                                    <p class="text-gray-600 text-sm">Let's discuss your specific requirements</p>
-                                </div>
-                                <div class="flex gap-3">
-                                    <a href="#all-services" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105">
-                                        View All Services
-                                    </a>
-                                    <a href="#contact" class="px-6 py-3 border-2 border-purple-600 text-purple-600 font-bold rounded-xl hover:bg-purple-50 transition-all duration-300">
-                                        Get Quote
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                <a href="aboutus.html" class="nav-link text-gray-700 hover:text-purple-600 transition-colors duration-300 font-semibold">About</a>
-                <a href="#testimonials" class="nav-link text-gray-700 hover:text-purple-600 transition-colors duration-300 font-semibold">Contact us</a>
-                <button class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform duration-300 shadow-lg">
-                    connect with us
-                </button>
-            </div>
-            
-            <button class="lg:hidden text-gray-700 hover:text-purple-600" id="mobile-menu-btn">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
+<header>
+  <nav class="fixed top-0 w-full z-50 transition-all duration-500 bg-[#0a0a23] text-white backdrop-blur-lg border-b border-gray-700 shadow-md" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 py-2">
+      <div class="flex items-center justify-between">
+        
+        <!-- Logo -->
+        <div class="flex items-center space-x-3">
+          <img src="logo.png" alt="Arihant Staffing Logo" class="ml-12 h-[90px] w-[200px] object-contain">
         </div>
-    </div>
-    
-    <!-- Mobile Menu -->
-    <div class="lg:hidden bg-white border-t border-gray-200 py-4 hidden" id="mobile-menu">
-        <div class="max-w-7xl mx-auto px-6 space-y-4">
-            <a href="index.html" class="block text-gray-700 hover:text-purple-600 font-semibold">Home</a>
-            
-            <!-- Mobile Services Dropdown -->
-            <div class="mobile-services">
-                <button class="flex items-center justify-between w-full text-gray-700 hover:text-purple-600 font-semibold" id="mobile-services-btn">
-                    <span>Services</span>
-                    <i class="fas fa-chevron-down transition-transform duration-300" id="mobile-chevron"></i>
-                </button>
-                <div class="hidden mt-3 ml-4 space-y-3" id="mobile-services-menu">
-                    <a href="#staff-augmentation" class="block text-gray-600 hover:text-purple-600 text-sm">Staff Augmentation</a>
-                    <a href="hrsolution.html" class="block text-gray-600 hover:text-purple-600 text-sm">HR Solutions</a>
-                    <a href="itconsultant.html" class="block text-gray-600 hover:text-purple-600 text-sm">Web Development</a>
-                    <a href="itconsultant.html" class="block text-gray-600 hover:text-purple-600 text-sm">IT Services & Consulting</a>
-                    <a href="bso.html" class="block text-gray-600 hover:text-purple-600 text-sm">Business Process Outsourcing</a>
-                    <a href="healthcareservices.html" class="block text-gray-600 hover:text-purple-600 text-sm">US Healthcare State License</a>
-                </div>
-            </div>
-            
-            <a href="#process" class="block text-gray-700 hover:text-purple-600 font-semibold">Process</a>
-            <a href="#industries" class="block text-gray-700 hover:text-purple-600 font-semibold">Industries</a>
-            <a href="#about" class="block text-gray-700 hover:text-purple-600 font-semibold">About</a>
-            <a href="#testimonials" class="block text-gray-700 hover:text-purple-600 font-semibold">Reviews</a>
-            <button class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-full font-bold">Contact Us</button>
-        </div>
-    </div>
-</nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="index2.html" class="block text-gray-300 hover:text-purple-400 font-semibold">Home</a>
+          
+          <!-- Services Dropdown -->
+          <div class="relative group">
+            <button class="nav-link text-gray-300 hover:text-purple-400 transition-colors duration-300 font-semibold flex items-center space-x-1" id="services-btn">
+              <span>Services</span>
+              <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+            </button>
+
+            <!-- Full Width Dropdown -->
+            <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-6xl bg-gray-800 backdrop-blur-xl border border-gray-700 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0" id="services-dropdown">
+              <div class="p-8">
+                <!-- Services Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    
+                  <!-- Staff Augmentation -->
+                  <a href="rpo.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-700 transition-all duration-300 group border border-gray-700 hover:border-purple-400 hover:shadow-md">
+                    <div class="flex-shrink-0">
+                      <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-user-plus text-white text-2xl"></i>
+                      </div>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="text-white font-bold text-xl group-hover:text-purple-400">Recruitment Process Outsourcing</h4>
+                      <p class="text-gray-300 text-base mt-2">Scale your team with skilled professionals and expand your workforce efficiently</p>
+                    </div>
+                  </a>
+
+                  <!-- HR Solutions -->
+                  <a href="hrsolution.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-700 transition-all duration-300 group border border-gray-700 hover:border-purple-400 hover:shadow-md">
+                    <div class="flex-shrink-0">
+                      <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-users-cog text-white text-2xl"></i>
+                      </div>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="text-white font-bold text-xl group-hover:text-purple-400">HR Solutions</h4>
+                      <p class="text-gray-300 text-base mt-2">Complete human resource management and strategic HR consulting services</p>
+                    </div>
+                  </a>
+
+                  <!-- Web Development -->
+                  <a href="itconsultant.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-700 transition-all duration-300 group border border-gray-700 hover:border-purple-400 hover:shadow-md">
+                    <div class="flex-shrink-0">
+                      <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                      </div>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="text-white font-bold text-xl group-hover:text-purple-400">Web Development</h4>
+                      <p class="text-gray-300 text-base mt-2">Custom websites and web applications built with modern technologies</p>
+                    </div>
+                  </a>
+
+                  <!-- IT Services -->
+                  <a href="itconsultant.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-700 transition-all duration-300 group border border-gray-700 hover:border-purple-400 hover:shadow-md">
+                    <div class="flex-shrink-0">
+                      <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-white text-2xl"></i>
+                      </div>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="text-white font-bold text-xl group-hover:text-purple-400">IT Services & Consulting</h4>
+                      <p class="text-gray-300 text-base mt-2">Technology solutions and strategic IT consulting for business growth</p>
+                    </div>
+                  </a>
+
+                  <!-- BPO -->
+                  <a href="bso.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-700 transition-all duration-300 group border border-gray-700 hover:border-purple-400 hover:shadow-md">
+                    <div class="flex-shrink-0">
+                      <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-network-wired text-white text-2xl"></i>
+                      </div>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="text-white font-bold text-xl group-hover:text-purple-400">Business Process Outsourcing</h4>
+                      <p class="text-gray-300 text-base mt-2">Streamline operations with comprehensive BPO solutions and services</p>
+                    </div>
+                  </a>
+
+                  <!-- Healthcare -->
+                  <a href="healthcareservices.html" class="service-item flex items-start space-x-4 p-6 rounded-xl hover:bg-gray-700 transition-all duration-300 group border border-gray-700 hover:border-purple-400 hover:shadow-md">
+                    <div class="flex-shrink-0">
+                      <div class="w-14 h-14 bg-gradient-to-br from-rose-500 to-pink-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-white text-2xl"></i>
+                      </div>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="text-white font-bold text-xl group-hover:text-purple-400">US Healthcare State License</h4>
+                      <p class="text-gray-300 text-base mt-2">Healthcare licensing and compliance support for US state requirements</p>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Bottom CTA -->
+                <div class="mt-8 pt-6 border-t border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div class="text-center sm:text-left">
+                    <h5 class="text-white font-bold text-lg">Need a Custom Solution?</h5>
+                    <p class="text-gray-300 text-sm">Let's discuss your specific requirements</p>
+                  </div>
+                  <div class="flex gap-3">
+                    <a href="#all-services" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105">
+                      View All Services
+                    </a>
+                    <a href="#contact" class="px-6 py-3 border-2 border-purple-500 text-purple-400 font-bold rounded-xl hover:bg-purple-600 hover:text-white transition-all duration-300">
+                      Get Quote
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="aboutus.html" class="nav-link text-gray-300 hover:text-purple-400 font-semibold">About</a>
+          <a href="#testimonials" class="nav-link text-gray-300 hover:text-purple-400 font-semibold">Contact Us</a>
+
+          <button class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform duration-300 shadow-lg">
+            Connect With Us
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden text-gray-300 hover:text-purple-400" id="mobile-menu-btn">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="lg:hidden bg-gray-900 border-t border-gray-700 py-4 hidden" id="mobile-menu">
+      <div class="max-w-7xl mx-auto px-6 space-y-4">
+        <a href="#home" class="block text-gray-300 hover:text-purple-400 font-semibold">Home</a>
+
+        <!-- Mobile Services Dropdown -->
+        <div class="mobile-services">
+          <button class="flex items-center justify-between w-full text-gray-300 hover:text-purple-400 font-semibold" id="mobile-services-btn">
+            <span>Services</span>
+            <i class="fas fa-chevron-down transition-transform duration-300" id="mobile-chevron"></i>
+          </button>
+          <div class="hidden mt-3 ml-4 space-y-3" id="mobile-services-menu">
+            <a href="#staff-augmentation" class="block text-gray-400 hover:text-purple-400 text-sm">Staff Augmentation</a>
+            <a href="hrsolution.html" class="block text-gray-400 hover:text-purple-400 text-sm">HR Solutions</a>
+            <a href="itconsultant.html" class="block text-gray-400 hover:text-purple-400 text-sm">Web Development</a>
+            <a href="itconsultant.html" class="block text-gray-400 hover:text-purple-400 text-sm">IT Services & Consulting</a>
+            <a href="bso.html" class="block text-gray-400 hover:text-purple-400 text-sm">Business Process Outsourcing</a>
+            <a href="healthcareservices.html" class="block text-gray-400 hover:text-purple-400 text-sm">US Healthcare State License</a>
+          </div>
+        </div>
+
+        <a href="#process" class="block text-gray-300 hover:text-purple-400 font-semibold">Process</a>
+        <a href="#industries" class="block text-gray-300 hover:text-purple-400 font-semibold">Industries</a>
+        <a href="#about" class="block text-gray-300 hover:text-purple-400 font-semibold">About</a>
+        <a href="#testimonials" class="block text-gray-300 hover:text-purple-400 font-semibold">Reviews</a>
+        <button class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full font-bold">Contact Us</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+
+
+    <!-- Enhanced Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden banner-enhanced">
+        <!-- Enhanced Animated Background -->
+        <div class="animated-gradient-bg"></div>
+        
+        <!-- Enhanced Floating Orbs -->
+        <div class="floating-orb-enhanced orb-primary"></div>
+        <div class="floating-orb-enhanced orb-secondary"></div>
+        <div class="floating-orb-enhanced orb-accent"></div>
+        
+        <!-- Enhanced Particle System -->
+        <div class="enhanced-particles" id="enhanced-particles-container"></div>
+        
+        <!-- Original Floating Shapes (kept for additional depth) -->
         <div class="absolute inset-0 opacity-20">
             <div class="floating-animation absolute top-20 left-10 w-96 h-96 morphing-shape bg-purple-300 blur-3xl"></div>
             <div class="floating-animation absolute bottom-20 right-10 w-80 h-80 morphing-shape bg-blue-300 blur-3xl" style="animation-delay: -3s;"></div>
             <div class="floating-animation absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 morphing-shape bg-pink-300 blur-3xl" style="animation-delay: -6s;"></div>
         </div>
         
-        <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 py-20 relative z-10  mt-12">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="space-y-10">
                     <div class="space-y-6">
-                        <h1 class="hero-title text-6xl lg:text-8xl font-black leading-tight">
+                        <h1 class="hero-title text-6xl lg:text-8xl font-black leading-tight text-white">
                             Find Your <br>
-                            <span class="gradient-text typed-text">Perfect</span>
+                            <span class="text-yellow-300 typed-text">Perfect</span>
                             <br>
                             <span class="text-shadow">Talent Match</span>
                         </h1>
                         
-                        <p class="hero-subtitle text-2xl text-gray-600 leading-relaxed max-w-2xl">
+                        <p class="hero-subtitle text-2xl text-white/90 leading-relaxed max-w-2xl">
                             We revolutionize recruitment with AI-powered matching, connecting exceptional talent with visionary companies in record time.
                         </p>
                     </div>
                     
                     <div class="hero-buttons flex flex-col sm:flex-row gap-6">
-                        <button class="gradient-bg text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-xl">
+                        <button class="bg-white text-purple-600 px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-xl">
                             <i class="fas fa-rocket mr-3"></i>
-                            Start Hiring Now
+                           Contact Us
                         </button>
-                        <button class="border-3 border-purple-600 text-purple-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-purple-600 hover:text-white transition-all duration-300">
-                            <i class="fas fa-play mr-3"></i>
-                            Watch AI Demo
-                        </button>
+                       
                     </div>
                     
                     <div class="hero-stats grid grid-cols-3 gap-8 pt-8">
-                        <div class="text-center">
-                            <div class="text-4xl font-black text-gray-800 mb-2">
-                                <span class="counter" data-target="4.9">0</span>/5
-                            </div>
-                            <div class="flex justify-center mb-2">
-                                <div class="flex text-yellow-500">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="text-sm text-gray-500">Client Rating</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-4xl font-black text-gray-800 mb-2">
-                                <span class="counter" data-target="25000">0</span>+
-                            </div>
-                            <div class="text-sm text-gray-500">Successful Placements</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-4xl font-black text-gray-800 mb-2">
-                                <span class="counter" data-target="24">0</span>hrs
-                            </div>
-                            <div class="text-sm text-gray-500">Avg. Match Time</div>
-                        </div>
+    <!-- Client Rating -->
+    <div class="text-center">
+        <div class="text-4xl font-black text-white mb-2">
+            <span class="counter" data-target="4.9">0</span>/5
+        </div>
+        <div class="flex justify-center mb-2">
+            <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+        </div>
+        <div class="text-sm text-white/70">Client Rating</div>
+    </div>
+
+    <!-- Successful Placements -->
+    <div class="text-center">
+        <div class="text-4xl font-black text-white mb-2">
+            <span class="counter" data-target="600">0</span>+
+        </div>
+        <div class="text-sm text-white/70">Successful Placements</div>
+    </div>
+
+    <!-- Years of Experience -->
+    <div class="text-center">
+        <div class="text-4xl font-black text-white mb-2">
+            <span class="counter" data-target="15+">0</span>+
+        </div>
+        <div class="text-sm text-white/70">Years of Staffing Experience</div>
+    </div>
+</div>
+
+                </div>
+                
+               <div class="relative hero-dashboard">
+    <div class="relative z-10">
+        <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 hover-lift border border-white/20">
+            <div class="space-y-8">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-2xl font-bold text-white">Expert Staffing Solutions</h3>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-4 h-4 bg-green-400 rounded-full animate-pulse"></span>
+                        <span class="text-green-400 font-semibold">Available 24/7</span>
                     </div>
                 </div>
                 
-                <div class="relative hero-dashboard">
-                    <div class="relative z-10">
-                        <div class="glass-card rounded-3xl p-8 hover-lift">
-                            <div class="space-y-8">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="text-2xl font-bold">AI Live Matching</h3>
-                                    <div class="flex items-center space-x-2">
-                                        <span class="w-4 h-4 bg-green-500 rounded-full animate-pulse"></span>
-                                        <span class="text-green-600 font-semibold">Live</span>
-                                    </div>
+                <div class="space-y-4">
+                    <div class="candidate-card flex items-center space-x-4 p-4 bg-white/20 rounded-xl backdrop-blur-sm border border-white/30">
+                        <div class="w-14 h-14 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            HR
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-bold text-lg text-white">HR Solutions Expert</p>
+                            <p class="text-sm text-white/70">Complete Human Resource Management</p>
+                            <div class="flex items-center mt-1">
+                                <div class="flex text-yellow-400 text-xs">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
-                                
-                                <div class="space-y-4">
-                                    <div class="candidate-card flex items-center space-x-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
-                                        <div class="w-14 h-14 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                                            JS
-                                        </div>
-                                        <div class="flex-1">
-                                            <p class="font-bold text-lg">John Smith</p>
-                                            <p class="text-sm text-gray-500">Senior Full-Stack Developer</p>
-                                            <div class="flex items-center mt-1">
-                                                <div class="flex text-yellow-400 text-xs">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <span class="text-xs text-gray-400 ml-2">5.0 (127 reviews)</span>
-                                            </div>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-green-500 font-bold text-xl">98%</div>
-                                            <div class="text-xs text-gray-400">Match</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="candidate-card flex items-center space-x-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
-                                        <div class="w-14 h-14 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                                            SA
-                                        </div>
-                                        <div class="flex-1">
-                                            <p class="font-bold text-lg">Sarah Adams</p>
-                                            <p class="text-sm text-gray-500">Senior UX/UI Designer</p>
-                                            <div class="flex items-center mt-1">
-                                                <div class="flex text-yellow-400 text-xs">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <span class="text-xs text-gray-400 ml-2">4.9 (89 reviews)</span>
-                                            </div>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-green-500 font-bold text-xl">96%</div>
-                                            <div class="text-xs text-gray-400">Match</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="candidate-card flex items-center space-x-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
-                                        <div class="w-14 h-14 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                                            MJ
-                                        </div>
-                                        <div class="flex-1">
-                                            <p class="font-bold text-lg">Michael Johnson</p>
-                                            <p class="text-sm text-gray-500">Product Manager</p>
-                                            <div class="flex items-center mt-1">
-                                                <div class="flex text-yellow-400 text-xs">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <span class="text-xs text-gray-400 ml-2">4.8 (156 reviews)</span>
-                                            </div>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-green-500 font-bold text-xl">94%</div>
-                                            <div class="text-xs text-gray-400">Match</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="space-y-4">
-                                    <div class="flex justify-between text-sm font-semibold text-gray-600">
-                                        <span>AI Matching Progress</span>
-                                        <span>96%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-3">
-                                        <div class="skill-progress bg-gradient-to-r from-purple-500 to-blue-500 h-3 rounded-full" style="width: 96%"></div>
-                                    </div>
-                                </div>
+                                <span class="text-xs text-white/50 ml-2">hr@arihantstaffing.com</span>
                             </div>
                         </div>
+                        <div class="text-center">
+                            <div class="text-green-400 font-bold text-sm">Contact</div>
+                            <div class="text-xs text-white/50">Expert</div>
+                        </div>
+                    </div>
+                    
+                    <div class="candidate-card flex items-center space-x-4 p-4 bg-white/20 rounded-xl backdrop-blur-sm border border-white/30">
+                        <div class="w-14 h-14 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            IT
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-bold text-lg text-white">IT Solutions Specialist</p>
+                            <p class="text-sm text-white/70">Technology & Digital Transformation</p>
+                            <div class="flex items-center mt-1">
+                                <div class="flex text-yellow-400 text-xs">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-xs text-white/50 ml-2">it@arihantstaffing.com</span>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-green-400 font-bold text-sm">Contact</div>
+                            <div class="text-xs text-white/50">Expert</div>
+                        </div>
+                    </div>
+                    
+                    <div class="candidate-card flex items-center space-x-4 p-4 bg-white/20 rounded-xl backdrop-blur-sm border border-white/30">
+                        <div class="w-14 h-14 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            BPO
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-bold text-lg text-white">BPO Solutions Manager</p>
+                            <p class="text-sm text-white/70">Business Process Outsourcing</p>
+                            <div class="flex items-center mt-1">
+                                <div class="flex text-yellow-400 text-xs">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-xs text-white/50 ml-2">bpo@arihantstaffing.com</span>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-green-400 font-bold text-sm">Contact</div>
+                            <div class="text-xs text-white/50">Expert</div>
+                        </div>
+                    </div>
+                     <div class="candidate-card flex items-center space-x-4 p-4 bg-white/20 rounded-xl backdrop-blur-sm border border-white/30">
+                        <div class="w-14 h-14 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            BPO
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-bold text-lg text-white">Gen AI Solution</p>
+                            <p class="text-sm text-white/70">Business Process Outsourcing</p>
+                            <div class="flex items-center mt-1">
+                                <div class="flex text-yellow-400 text-xs">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-xs text-white/50 ml-2">bpo@arihantstaffing.com</span>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-green-400 font-bold text-sm">Contact</div>
+                            <div class="text-xs text-white/50">Expert</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="flex justify-between text-sm font-semibold text-white/80">
+                        <span>Client Satisfaction Rate</span>
+                        <span>98%</span>
+                    </div>
+                    <div class="w-full bg-white/20 rounded-full h-3">
+                        <div class="skill-progress bg-gradient-to-r from-green-400 to-blue-500 h-3 rounded-full" style="width: 98%"></div>
                     </div>
                 </div>
+                
+                <!-- Contact CTA -->
+                <div class="text-center pt-4 border-t border-white/20">
+                    <p class="text-white/80 text-sm mb-3">Ready to connect with us?</p>
+                    <div class="flex space-x-3 justify-center">
+                        <a href="tel:+15551234567" class="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
+                            <i class="fas fa-phone mr-2"></i>Call Now
+                        </a>
+                        <a href="mailto:contact@arihantstaffing.com" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
+                            <i class="fas fa-envelope mr-2"></i>Email Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <div class="max-w-7xl mx-auto px-6 pt-12">
-    <div class="text-center mb-12">
-      <p class="text-gray-500 font-semibold mb-8">Trusted by industry leaders worldwide</p>
-    </div>
+        <div class="text-center mb-12">
+            <p class="text-gray-500 font-semibold mb-8">Trusted by industry leaders worldwide</p>
+        </div>
 
-    <!-- Logo Slider -->
-    <div class="relative overflow-hidden">
-      <div class="flex items-center space-x-16 animate-slide">
-        <!-- Repeat logos for infinite effect -->
-        <i class="fab fa-google text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-microsoft text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-apple text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-amazon text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-meta text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-tesla text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-samsung text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-ibm text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-intel text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-nvidia text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-oracle text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-adobe text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+        <!-- Logo Slider -->
+        <div class="relative overflow-hidden">
+            <div class="flex items-center space-x-16 animate-slide">
+                <!-- Repeat logos for infinite effect -->
+                <i class="fab fa-google text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-microsoft text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-apple text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-amazon text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-meta text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-tesla text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-samsung text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-ibm text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-intel text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-nvidia text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-oracle text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-adobe text-5xl text-gray-400 hover:text-gray-600 transition"></i>
 
-        <!-- Duplicate set for infinite scroll -->
-        <i class="fab fa-google text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-microsoft text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-apple text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-amazon text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-meta text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-tesla text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-samsung text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-ibm text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-intel text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-nvidia text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-oracle text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-        <i class="fab fa-adobe text-5xl text-gray-400 hover:text-gray-600 transition"></i>
-      </div>
+                <!-- Duplicate set for infinite scroll -->
+                <i class="fab fa-google text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-microsoft text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-apple text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-amazon text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-meta text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-tesla text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-samsung text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-ibm text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-intel text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-nvidia text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-oracle text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                <i class="fab fa-adobe text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+            </div>
+        </div>
     </div>
-  </div>
 
     <!-- Process Section -->
     <section id="process" class="py-32 bg-white relative overflow-hidden">
@@ -583,289 +755,293 @@
                     How We <span class="gradient-text">Deliver Excellence</span>
                 </h2>
                 <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                    Our proven 5-step process combines AI technology with human expertise to deliver exceptional results in record time.
+                   Our Proven 5-Step Process Combines AI Technology With Human Expertise To Deliver Exceptional Results In Record Time
                 </p>
             </div>
 
-            <div class="grid lg:grid-cols-5 gap-8">
-                <!-- Step 1 -->
-                <div class="process-step text-center">
-                    <div class="relative mb-8">
-                        <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white text-3xl font-black mx-auto shadow-2xl">
-                            1
-                        </div>
-                        <div class="absolute -inset-4 gradient-bg rounded-full opacity-20 animate-pulse"></div>
-                    </div>
-                    <h3 class="text-2xl font-black mb-4">Discovery & Analysis</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        We deep-dive into your company culture, requirements, and success criteria using our proprietary assessment framework.
-                    </p>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="process-step text-center">
-                    <div class="relative mb-8">
-                        <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white text-3xl font-black mx-auto shadow-2xl">
-                            2
-                        </div>
-                        <div class="absolute -inset-4 gradient-bg rounded-full opacity-20 animate-pulse" style="animation-delay: 0.5s;"></div>
-                    </div>
-                    <h3 class="text-2xl font-black mb-4">AI-Powered Sourcing</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Our AI algorithms scan millions of profiles across 50+ platforms to identify the perfect candidates for your role.
-                    </p>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="process-step text-center">
-                    <div class="relative mb-8">
-                        <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white text-3xl font-black mx-auto shadow-2xl">
-                            3
-                        </div>
-                        <div class="absolute -inset-4 gradient-bg rounded-full opacity-20 animate-pulse" style="animation-delay: 1s;"></div>
-                    </div>
-                    <h3 class="text-2xl font-black mb-4">Smart Screening</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Multi-layered evaluation including skills assessment, cultural fit analysis, and predictive performance modeling.
-                    </p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="process-step text-center">
-                    <div class="relative mb-8">
-                        <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white text-3xl font-black mx-auto shadow-2xl">
-                            4
-                        </div>
-                        <div class="absolute -inset-4 gradient-bg rounded-full opacity-20 animate-pulse" style="animation-delay: 1.5s;"></div>
-                    </div>
-                    <h3 class="text-2xl font-black mb-4">Expert Interviews</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Our senior recruiters conduct in-depth interviews to validate technical skills and ensure perfect alignment.
-                    </p>
-                </div>
-
-                <!-- Step 5 -->
-                <div class="process-step text-center">
-                    <div class="relative mb-8">
-                        <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white text-3xl font-black mx-auto shadow-2xl">
-                            5
-                        </div>
-                        <div class="absolute -inset-4 gradient-bg rounded-full opacity-20 animate-pulse" style="animation-delay: 2s;"></div>
-                    </div>
-                    <h3 class="text-2xl font-black mb-4">Seamless Integration</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        We facilitate the entire placement process and provide ongoing support to ensure successful integration.
-                    </p>
-                </div>
+          <div class="grid lg:grid-cols-5 gap-10">
+    <!-- Step 1 -->
+    <div class="process-step text-center">
+        <div class="relative mb-8">
+            <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white text-3xl font-black mx-auto shadow-2xl">
+                1
             </div>
+            <div class="absolute -inset-4 gradient-bg rounded-full opacity-20 animate-pulse"></div>
+        </div>
+        <h3 class="text-2xl font-black mb-4">Discovery & Analysis</h3>
+        <p class="text-gray-600 leading-relaxed">
+            We Deep-Dive Into Your Company Culture, Requirements, And Success Criteria Using Our Proprietary Assessment Framework.
+        </p>
+    </div>
 
-            <div class="text-center mt-16">
+    <!-- Step 2 -->
+    <div class="process-step text-center">
+        <div class="relative mb-8">
+            <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white text-3xl font-black mx-auto shadow-2xl">
+                2
+            </div>
+            <div class="absolute -inset-4 gradient-bg rounded-full opacity-20 animate-pulse" style="animation-delay: 0.5s;"></div>
+        </div>
+        <h3 class="text-2xl font-black mb-4">AI-Powered Sourcing</h3>
+        <p class="text-gray-600 leading-relaxed">
+            Our AI Algorithms Scan Millions Of Profiles Across 50+ Platforms To Identify The Perfect Candidates For Your Role.
+        </p>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="process-step text-center">
+        <div class="relative mb-8">
+            <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white text-3xl font-black mx-auto shadow-2xl">
+                3
+            </div>
+            <div class="absolute -inset-4 gradient-bg rounded-full opacity-20 animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+        <h3 class="text-2xl font-black mb-4">Smart Screening</h3>
+        <p class="text-gray-600 leading-relaxed">
+            Multi-Layered Evaluation Including Skills Assessment, Cultural Fit Analysis, And Predictive Performance Modeling.
+        </p>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="process-step text-center">
+        <div class="relative mb-8">
+            <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white text-3xl font-black mx-auto shadow-2xl">
+                4
+            </div>
+            <div class="absolute -inset-4 gradient-bg rounded-full opacity-20 animate-pulse" style="animation-delay: 1.5s;"></div>
+        </div>
+        <h3 class="text-2xl font-black mb-4">Expert Interviews</h3>
+        <p class="text-gray-600 leading-relaxed">
+            Our Senior Recruiters Conduct In-Depth Interviews To Validate Technical Skills And Ensure Perfect Alignment.
+        </p>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="process-step text-center">
+        <div class="relative mb-8">
+            <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white text-3xl font-black mx-auto shadow-2xl">
+                5
+            </div>
+            <div class="absolute -inset-4 gradient-bg rounded-full opacity-20 animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+        <h3 class="text-2xl font-black mb-4">Seamless Integration</h3>
+        <p class="text-gray-600 leading-relaxed">
+            We Facilitate The Entire Placement Process And Provide Ongoing Support To Ensure Successful Integration.
+        </p>
+    </div>
+</div>
+
+
+            <!-- <div class="text-center mt-16">
                 <button class="gradient-bg text-white px-12 py-5 rounded-full font-bold text-xl hover:scale-105 transition-transform duration-300 shadow-xl">
                     <i class="fas fa-play mr-3"></i>
                     See Process in Action
                 </button>
-            </div>
+            </div> -->
         </div>
     </section>
 
     <!-- Industries Section -->
     <section id="industries" class="py-32 bg-gradient-to-br from-indigo-50 to-purple-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <div class="inline-flex items-center px-6 py-3 bg-indigo-100 rounded-full text-indigo-600 font-bold text-sm mb-6">
-                    <i class="fas fa-industry mr-2"></i>
-                    Industries We Serve
-                </div>
-                <h2 class="text-5xl lg:text-6xl font-black mb-8">
-                    <span class="gradient-text">Specialized Expertise</span> Across Industries
-                </h2>
-                <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                    Our deep industry knowledge and specialized recruitment teams deliver targeted solutions for every sector.
-                </p>
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20">
+            <div class="inline-flex items-center px-6 py-3 bg-indigo-100 rounded-full text-indigo-600 font-bold text-sm mb-6">
+                <i class="fas fa-industry mr-2"></i>
+                Industries We Serve
             </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
-                    <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-laptop-code text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Technology</h3>
-                    <p class="text-gray-600 mb-4">Software development, AI/ML, cybersecurity, cloud infrastructure</p>
-                    <div class="text-sm text-purple-600 font-semibold">2,500+ Placements</div>
-                </div>
-
-                <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
-                    <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-heartbeat text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Healthcare</h3>
-                    <p class="text-gray-600 mb-4">Medical professionals, healthcare IT, pharmaceutical research</p>
-                    <div class="text-sm text-purple-600 font-semibold">1,800+ Placements</div>
-                </div>
-
-                <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
-                    <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Finance</h3>
-                    <p class="text-gray-600 mb-4">Banking, fintech, investment management, accounting</p>
-                    <div class="text-sm text-purple-600 font-semibold">1,200+ Placements</div>
-                </div>
-
-                <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
-                    <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-cog text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Manufacturing</h3>
-                    <p class="text-gray-600 mb-4">Industrial engineering, supply chain, quality assurance</p>
-                    <div class="text-sm text-purple-600 font-semibold">900+ Placements</div>
-                </div>
-
-                <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
-                    <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Education</h3>
-                    <p class="text-gray-600 mb-4">EdTech, online learning, academic administration</p>
-                    <div class="text-sm text-purple-600 font-semibold">750+ Placements</div>
-                </div>
-
-                <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
-                    <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-shopping-cart text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">E-commerce</h3>
-                    <p class="text-gray-600 mb-4">Digital marketing, logistics, customer experience</p>
-                    <div class="text-sm text-purple-600 font-semibold">1,100+ Placements</div>
-                </div>
-
-                <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
-                    <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-leaf text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Clean Energy</h3>
-                    <p class="text-gray-600 mb-4">Renewable energy, sustainability, green technology</p>
-                    <div class="text-sm text-purple-600 font-semibold">400+ Placements</div>
-                </div>
-
-                <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
-                    <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-palette text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Creative</h3>
-                    <p class="text-gray-600 mb-4">Design, marketing, content creation, media production</p>
-                    <div class="text-sm text-purple-600 font-semibold">600+ Placements</div>
-                </div>
-            </div>
+            <h2 class="text-5xl lg:text-6xl font-black mb-8">
+                <span class="gradient-text">Expert</span> Across Multiple Domains
+            </h2>
+            <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+               Our Deep Industry Experience And Specialized Recruitment Teams Deliver Targeted Solutions For Every Domain
+            </p>
         </div>
-    </section>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Technology -->
+            <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                    <i class="fas fa-laptop-code text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Technology</h3>
+                <p class="text-gray-600 mb-4">Software Development, AI/ML, Cybersecurity, Cloud Infrastructure</p>
+            </div>
+
+            <!-- Healthcare -->
+            <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                    <i class="fas fa-heartbeat text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Healthcare</h3>
+                <p class="text-gray-600 mb-4">Medical Professionals, Healthcare IT, Pharmaceutical Research</p>
+            </div>
+
+            <!-- Finance -->
+            <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                    <i class="fas fa-chart-line text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Finance</h3>
+                <p class="text-gray-600 mb-4">Banking, Fintech, Investment Management, Accounting</p>
+            </div>
+
+            <!-- Manufacturing -->
+            <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                    <i class="fas fa-cog text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Manufacturing</h3>
+                <p class="text-gray-600 mb-4">Industrial Engineering, Supply Chain, Quality Assurance</p>
+            </div>
+
+            <!-- Education -->
+            <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                    <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Education</h3>
+                <p class="text-gray-600 mb-4">EdTech, Online Learning, Academic Administration</p>
+            </div>
+
+            <!-- Clean Energy -->
+            <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                    <i class="fas fa-leaf text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Clean Energy</h3>
+                <p class="text-gray-600 mb-4">Renewable Energy, Sustainability, Green Technology</p>
+            </div>
+
+            <!-- Creative -->
+            <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                    <i class="fas fa-palette text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Creative</h3>
+                <p class="text-gray-600 mb-4">Design, Marketing, Content Creation, Media Production</p>
+            </div>
+
+            <!-- Consulting -->
+            <div class="industry-card glass-card rounded-2xl p-8 text-center hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                    <i class="fas fa-user-tie text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Consulting & Advisory</h3>
+                <p class="text-gray-600 mb-4">Strategy Consulting, Business Transformation, Risk Advisory</p>
+            </div>
+
+            <!-- BPO & Outsourcing -->
+           
+        </div>
+    </div>
+</section>
+
 
     <!-- About Section -->
-    <section id="about" class="py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div class="space-y-10">
-                    <div>
-                        <div class="inline-flex items-center px-6 py-3 bg-green-100 rounded-full text-green-600 font-bold text-sm mb-6">
-                            <i class="fas fa-award mr-2"></i>
-                            About Arihant Staffing
-                        </div>
-                        <h2 class="text-5xl lg:text-6xl font-black mb-8">
-                            Why <span class="gradient-text">Leading Companies</span> Choose Us
-                        </h2>
-                        <p class="text-2xl text-gray-600 leading-relaxed mb-8">
-                            For over 15 years, we've revolutionized recruitment through cutting-edge AI technology, deep industry expertise, and an unwavering commitment to excellence.
-                        </p>
+   <section id="about" class="py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+            <!-- Left Content -->
+            <div class="space-y-10">
+                <div>
+                    <div class="inline-flex items-center px-6 py-3 bg-green-100 rounded-full text-green-600 font-bold text-sm mb-6">
+                        <i class="fas fa-award mr-2"></i>
+                        About Arihant Staffing
                     </div>
-                    
-                    <div class="space-y-8">
-                        <div class="flex items-start space-x-6">
-                            <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-brain text-white text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold mb-3">AI-Driven Intelligence</h3>
-                                <p class="text-gray-600 text-lg leading-relaxed">
-                                    Our proprietary AI analyzes 500+ data points including skills, experience, cultural fit, and performance predictors to ensure perfect matches.
-                                </p>
-                            </div>
+                    <h2 class="text-5xl lg:text-6xl font-black mb-8">
+                        Why <span class="gradient-text">Leading Companies</span> Trust Us
+                    </h2>
+                    <p class="text-2xl text-gray-600 leading-relaxed mb-8">
+                        For over 15 years, Arihant Staffing has been a trusted recruitment partner, delivering top talent across industries with speed, accuracy, and reliability. We connect businesses with the right professionals to fuel growth and long-term success.
+                    </p>
+                </div>
+                
+                <div class="space-y-8">
+                    <!-- Deep Industry Expertise -->
+                    <div class="flex items-start space-x-6">
+                        <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-briefcase text-white text-xl"></i>
                         </div>
-                        
-                        <div class="flex items-start space-x-6">
-                            <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-globe text-white text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold mb-3">Global Talent Network</h3>
-                                <p class="text-gray-600 text-lg leading-relaxed">
-                                    Access to a curated network of 2.5M+ pre-vetted professionals across 80+ countries and 200+ skill specializations.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-6">
-                            <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-shield-alt text-white text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold mb-3">Guaranteed Results</h3>
-                                <p class="text-gray-600 text-lg leading-relaxed">
-                                    99.3% client satisfaction rate with comprehensive guarantees, replacement policies, and ongoing support for all placements.
-                                </p>
-                            </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-3">Deep Industry Expertise</h3>
+                            <p class="text-gray-600 text-lg leading-relaxed">
+                                Our specialized recruiters understand sector-specific hiring needs — from IT and finance to healthcare and manufacturing.
+                            </p>
                         </div>
                     </div>
                     
-                    <div class="flex flex-col sm:flex-row gap-6">
-                        <button class="gradient-bg text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-xl">
-                            <i class="fas fa-calendar mr-3"></i>
-                            Schedule Demo
-                        </button>
-                        <button class="border-2 border-purple-600 text-purple-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-purple-600 hover:text-white transition-all duration-300">
-                            <i class="fas fa-download mr-3"></i>
-                            Get Case Study
-                        </button>
+                    <!-- Vast Talent Network -->
+                    <div class="flex items-start space-x-6">
+                        <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-users text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-3">Vast Talent Network</h3>
+                            <p class="text-gray-600 text-lg leading-relaxed">
+                                Access to a diverse pool of pre-vetted professionals across multiple domains, skill sets, and seniority levels.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Reliable Results -->
+                    <div class="flex items-start space-x-6">
+                        <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-handshake text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-3">Proven Reliability</h3>
+                            <p class="text-gray-600 text-lg leading-relaxed">
+                                With a 95%+ client retention rate, we pride ourselves on consistent results, transparent processes, and long-term partnerships.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="relative">
-                    <div class="grid grid-cols-2 gap-8">
-                        <div class="space-y-8">
-                            <div class="about-stat glass-card rounded-3xl p-8 text-center hover-lift">
-                                <div class="text-5xl font-black gradient-text mb-3">
-                                    <span class="counter" data-target="15">0</span>+
-                                </div>
-                                <div class="text-gray-600 font-semibold">Years of Excellence</div>
+                <!-- Call to Action -->
+                <div class="flex justify-center">
+                    <button class="gradient-bg text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-xl">
+                        <i class="fas fa-calendar mr-3"></i>
+                       Contact Us
+                    </button>
+                    
+                </div>
+            </div>
+            
+            <!-- Right Content (Stats) -->
+            <div class="relative">
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="space-y-8">
+                        <div class="about-stat glass-card rounded-3xl p-8 text-center hover-lift">
+                            <div class="text-5xl font-black gradient-text mb-3">
+                                <span class="counter" data-target="15">0</span>+
                             </div>
-                            
-                            <div class="about-stat glass-card rounded-3xl p-8 text-center hover-lift">
-                                <div class="text-5xl font-black gradient-text mb-3">
-                                    <span class="counter" data-target="750">0</span>+
-                                </div>
-                                <div class="text-gray-600 font-semibold">Enterprise Clients</div>
-                            </div>
+                            <div class="text-gray-600 font-semibold">Years Of Excellence</div>
                         </div>
                         
-                        <div class="space-y-8 mt-12">
-                            <div class="about-stat glass-card rounded-3xl p-8 text-center hover-lift">
-                                <div class="text-5xl font-black gradient-text mb-3">
-                                    2.5M+
-                                </div>
-                                <div class="text-gray-600 font-semibold">Global Talent Network</div>
+                        <div class="about-stat glass-card rounded-3xl p-8 text-center hover-lift">
+                            <div class="text-5xl font-black gradient-text mb-3">
+                                <span class="counter" data-target="50">0</span>+
                             </div>
-                            
-                            <div class="about-stat glass-card rounded-3xl p-8 text-center hover-lift">
-                                <div class="text-5xl font-black gradient-text mb-3">
-                                    <span class="counter" data-target="99.3">0</span>%
-                                </div>
-                                <div class="text-gray-600 font-semibold">Client Satisfaction</div>
-                            </div>
+                            <div class="text-gray-600 font-semibold">Enterprise Clients</div>
                         </div>
+                    </div>
+                    
+                    <div class="space-y-8 mt-12">
+                        <div class="about-stat glass-card rounded-3xl p-8 text-center hover-lift">
+                            <div class="text-5xl font-black gradient-text mb-3">
+                                600+
+                            </div>
+                            <div class="text-gray-600 font-semibold">Successful Placements</div>
+                        </div>
+                        
+                      
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Stats Section -->
     <section class="py-32 gradient-bg text-white relative overflow-hidden">
@@ -880,14 +1056,14 @@
                     Results That <span class="text-yellow-300">Speak Volumes</span>
                 </h2>
                 <p class="text-2xl text-purple-100 max-w-4xl mx-auto leading-relaxed">
-                    Our track record of success demonstrates our commitment to delivering exceptional recruitment outcomes that transform businesses.
+                    Our Track Record Of Success Demonstrates Our Commitment To Delivering Exceptional Recruitment Outcomes That Transform Businesses.
                 </p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <div class="text-center stats-item">
                     <div class="text-7xl lg:text-8xl font-black mb-6">
-                        <span class="counter" data-target="25000">0</span>+
+                        <span class="counter" data-target="600">0</span>+
                     </div>
                     <div class="text-2xl font-bold text-purple-100 mb-2">Successful Placements</div>
                     <div class="text-purple-200">Since 2008</div>
@@ -895,7 +1071,7 @@
                 
                 <div class="text-center stats-item">
                     <div class="text-7xl lg:text-8xl font-black mb-6">
-                        <span class="counter" data-target="750">0</span>+
+                        <span class="counter" data-target="50">0</span>+
                     </div>
                     <div class="text-2xl font-bold text-purple-100 mb-2">Enterprise Clients</div>
                     <div class="text-purple-200">Worldwide</div>
@@ -918,323 +1094,76 @@
                 </div>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-12 mt-20">
-                <div class="glass-effect rounded-3xl p-8 text-center">
-                    <div class="text-4xl mb-4">🏆</div>
-                    <h3 class="text-2xl font-bold mb-4">Industry Awards</h3>
-                    <p class="text-purple-100">Best Staffing Agency 2023, 2024, 2025</p>
-                </div>
-                
-                <div class="glass-effect rounded-3xl p-8 text-center">
-                    <div class="text-4xl mb-4">🌟</div>
-                    <h3 class="text-2xl font-bold mb-4">Client Testimonials</h3>
-                    <p class="text-purple-100">4.9/5 average rating across all platforms</p>
-                </div>
-                
-                <div class="glass-effect rounded-3xl p-8 text-center">
-                    <div class="text-4xl mb-4">🚀</div>
-                    <h3 class="text-2xl font-bold mb-4">Growth Rate</h3>
-                    <p class="text-purple-100">300% year-over-year client growth</p>
-                </div>
-            </div>
+           
         </div>
     </section>
 
     <!-- Team Section -->
-    <section class="py-32 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <div class="inline-flex items-center px-6 py-3 bg-yellow-100 rounded-full text-yellow-600 font-bold text-sm mb-6">
-                    <i class="fas fa-users mr-2"></i>
-                    Meet Our Team
-                </div>
-                <h2 class="text-5xl lg:text-6xl font-black mb-8">
-                    The <span class="gradient-text">Experts</span> Behind Your Success
-                </h2>
-                <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                    Our team of industry veterans, AI specialists, and recruitment experts work tirelessly to deliver exceptional results for every client.
-                </p>
+   <section class="py-32 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20">
+            <div class="inline-flex items-center px-6 py-3 bg-yellow-100 rounded-full text-yellow-600 font-bold text-sm mb-6">
+                <i class="fas fa-users mr-2"></i>
+                Meet Our Team
             </div>
+            <h2 class="text-5xl lg:text-6xl font-black mb-8">
+                The <span class="gradient-text">Experts</span> Behind Your Success
+            </h2>
+            <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+               Our Team Of Industry Veterans And Recruitment Experts Work Tirelessly To Deliver Exceptional Results For Every Client.
+            </p>
+        </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-                <div class="team-member glass-card rounded-3xl p-8 text-center hover-lift">
-                    <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
-                        SK
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Sarah Kim</h3>
-                    <p class="text-purple-600 font-semibold mb-4">CEO & Co-Founder</p>
-                    <p class="text-gray-600 text-sm mb-6">15+ years in executive recruitment, former McKinsey consultant</p>
-                    <div class="flex justify-center space-x-3">
-                        <a href="#" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin text-xs"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors">
-                            <i class="fab fa-twitter text-xs"></i>
-                        </a>
-                    </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-10">
+            <!-- Nishant -->
+            <div class="team-member glass-card rounded-3xl p-8 text-center hover-lift">
+                <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                    NP
                 </div>
-
-                <div class="team-member glass-card rounded-3xl p-8 text-center hover-lift">
-                    <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
-                        MR
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Marcus Rodriguez</h3>
-                    <p class="text-purple-600 font-semibold mb-4">CTO & Co-Founder</p>
-                    <p class="text-gray-600 text-sm mb-6">AI/ML expert, former Google AI researcher, PhD Computer Science</p>
-                    <div class="flex justify-center space-x-3">
-                        <a href="#" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin text-xs"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors">
-                            <i class="fab fa-github text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="team-member glass-card rounded-3xl p-8 text-center hover-lift">
-                    <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
-                        EC
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Emily Chen</h3>
-                    <p class="text-purple-600 font-semibold mb-4">VP of Operations</p>
-                    <p class="text-gray-600 text-sm mb-6">Operations excellence, former Amazon VP, MBA Harvard</p>
-                    <div class="flex justify-center space-x-3">
-                        <a href="#" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin text-xs"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors">
-                            <i class="fab fa-twitter text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="team-member glass-card rounded-3xl p-8 text-center hover-lift">
-                    <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
-                        DJ
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">David Johnson</h3>
-                    <p class="text-purple-600 font-semibold mb-4">Head of Client Success</p>
-                    <p class="text-gray-600 text-sm mb-6">Client relationship expert, 12+ years in enterprise solutions</p>
-                    <div class="flex justify-center space-x-3">
-                        <a href="#" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin text-xs"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors">
-                            <i class="fas fa-envelope text-xs"></i>
-                        </a>
-                    </div>
+                <h3 class="text-xl font-bold mb-2">Nishant Panchamiya</h3>
+                <p class="text-purple-600 font-semibold mb-4">Founder & CEO</p>
+                <p class="text-gray-600 text-sm mb-6">Visionary leader with extensive experience in staffing solutions and driving organizational growth.</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="#" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-xs"></i>
+                    </a>
+                    <a href="mailto:nishant@example.com" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors">
+                        <i class="fas fa-envelope text-xs"></i>
+                    </a>
                 </div>
             </div>
 
-            <div class="text-center mt-16">
-                <button class="gradient-bg text-white px-12 py-5 rounded-full font-bold text-xl hover:scale-105 transition-transform duration-300 shadow-xl">
-                    <i class="fas fa-users mr-3"></i>
-                    Join Our Team
-                </button>
+            <!-- Dhaval -->
+            <div class="team-member glass-card rounded-3xl p-8 text-center hover-lift">
+                <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                    DP
+                </div>
+                <h3 class="text-xl font-bold mb-2">Dhaval Panchamiya</h3>
+                <p class="text-purple-600 font-semibold mb-4">Director Of Recruiting Operations</p>
+                <p class="text-gray-600 text-sm mb-6">Expert in recruitment strategy and operations with a proven track record of delivering high-impact staffing solutions.</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="#" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-xs"></i>
+                    </a>
+                    <a href="mailto:dhaval@example.com" class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors">
+                        <i class="fas fa-envelope text-xs"></i>
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
+
+        <div class="text-center mt-16">
+            <button class="gradient-bg text-white px-12 py-5 rounded-full font-bold text-xl hover:scale-105 transition-transform duration-300 shadow-xl">
+                <i class="fas fa-users mr-3"></i>
+                Join Our Team
+            </button>
+        </div>
+    </div>
+</section>
+
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <div class="inline-flex items-center px-6 py-3 bg-pink-100 rounded-full text-pink-600 font-bold text-sm mb-6">
-                    <i class="fas fa-quote-left mr-2"></i>
-                    Client Success Stories
-                </div>
-                <h2 class="text-5xl lg:text-6xl font-black mb-8">
-                    What Our <span class="gradient-text">Clients</span> Say
-                </h2>
-                <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                    Don't just take our word for it. Here's what industry leaders and Fortune 500 companies say about our services.
-                </p>
-            </div>
-            
-            <div class="grid lg:grid-cols-3 gap-10">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card glass-card rounded-3xl p-10 hover-lift">
-                    <div class="flex items-center mb-8">
-                        <div class="flex text-yellow-500 text-xl">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="ml-3 text-gray-600 font-semibold">5.0</span>
-                    </div>
-                    
-                    <blockquote class="text-gray-700 text-lg leading-relaxed mb-8 italic">
-                        "Arihant Staffing's AI-powered matching found us the perfect CTO in just 10 days. Their technology is revolutionary and their service is unmatched. Game-changer for our hiring process."
-                    </blockquote>
-                    
-                    <div class="flex items-center">
-                        <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                            JD
-                        </div>
-                        <div>
-                            <div class="font-bold text-lg">Jennifer Davis</div>
-                            <div class="text-purple-600 font-semibold">CEO</div>
-                            <div class="text-gray-500">TechStart Innovations</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card glass-card rounded-3xl p-10 hover-lift">
-                    <div class="flex items-center mb-8">
-                        <div class="flex text-yellow-500 text-xl">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="ml-3 text-gray-600 font-semibold">5.0</span>
-                    </div>
-                    
-                    <blockquote class="text-gray-700 text-lg leading-relaxed mb-8 italic">
-                        "Outstanding results! They helped us scale our engineering team by 400% in 8 months. Every hire has been exceptional - perfect cultural fit and technical expertise."
-                    </blockquote>
-                    
-                    <div class="flex items-center">
-                        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                            SM
-                        </div>
-                        <div>
-                            <div class="font-bold text-lg">Sarah Martinez</div>
-                            <div class="text-purple-600 font-semibold">CTO</div>
-                            <div class="text-gray-500">GrowthScale Corp</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card glass-card rounded-3xl p-10 hover-lift">
-                    <div class="flex items-center mb-8">
-                        <div class="flex text-yellow-500 text-xl">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="ml-3 text-gray-600 font-semibold">5.0</span>
-                    </div>
-                    
-                    <blockquote class="text-gray-700 text-lg leading-relaxed mb-8 italic">
-                        "The quality of candidates is phenomenal. Every hire has exceeded expectations. Their process is thorough, professional, and delivers results consistently."
-                    </blockquote>
-                    
-                    <div class="flex items-center">
-                        <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                            MJ
-                        </div>
-                        <div>
-                            <div class="font-bold text-lg">Michael Johnson</div>
-                            <div class="text-purple-600 font-semibold">VP Engineering</div>
-                            <div class="text-gray-500">Enterprise Solutions Inc</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 4 -->
-                <div class="testimonial-card glass-card rounded-3xl p-10 hover-lift">
-                    <div class="flex items-center mb-8">
-                        <div class="flex text-yellow-500 text-xl">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="ml-3 text-gray-600 font-semibold">5.0</span>
-                    </div>
-                    
-                    <blockquote class="text-gray-700 text-lg leading-relaxed mb-8 italic">
-                        "Arihant Staffing transformed our hiring process. The AI matching is incredibly accurate, and their team provides white-glove service throughout the entire process."
-                    </blockquote>
-                    
-                    <div class="flex items-center">
-                        <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                            LW
-                        </div>
-                        <div>
-                            <div class="font-bold text-lg">Lisa Wang</div>
-                            <div class="text-purple-600 font-semibold">CHRO</div>
-                            <div class="text-gray-500">Global Dynamics</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 5 -->
-                <div class="testimonial-card glass-card rounded-3xl p-10 hover-lift">
-                    <div class="flex items-center mb-8">
-                        <div class="flex text-yellow-500 text-xl">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="ml-3 text-gray-600 font-semibold">5.0</span>
-                    </div>
-                    
-                    <blockquote class="text-gray-700 text-lg leading-relaxed mb-8 italic">
-                        "Exceptional expertise in fintech recruitment. They understand our industry deeply and consistently deliver top-tier candidates who drive our business forward."
-                    </blockquote>
-                    
-                    <div class="flex items-center">
-                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                            RP
-                        </div>
-                        <div>
-                            <div class="font-bold text-lg">Robert Park</div>
-                            <div class="text-purple-600 font-semibold">CEO</div>
-                            <div class="text-gray-500">FinTech Pioneers</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 6 -->
-                <div class="testimonial-card glass-card rounded-3xl p-10 hover-lift">
-                    <div class="flex items-center mb-8">
-                        <div class="flex text-yellow-500 text-xl">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="ml-3 text-gray-600 font-semibold">5.0</span>
-                    </div>
-                    
-                    <blockquote class="text-gray-700 text-lg leading-relaxed mb-8 italic">
-                        "Their speed and accuracy are unmatched. We've been working with Arihant Staffing for 3 years and they consistently exceed our expectations on every placement."
-                    </blockquote>
-                    
-                    <div class="flex items-center">
-                        <div class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                            AT
-                        </div>
-                        <div>
-                            <div class="font-bold text-lg">Amanda Taylor</div>
-                            <div class="text-purple-600 font-semibold">Head of Talent</div>
-                            <div class="text-gray-500">CloudTech Solutions</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-16">
-                <button class="gradient-bg text-white px-12 py-5 rounded-full font-bold text-xl hover:scale-105 transition-transform duration-300 shadow-xl">
-                    <i class="fas fa-comment mr-3"></i>
-                    Read All Reviews
-                </button>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- FAQ Section -->
     <section class="py-32 bg-gradient-to-br from-purple-50 to-indigo-50">
@@ -1326,21 +1255,19 @@
                 <span class="text-yellow-300">Hiring Process?</span>
             </h2>
             <p class="text-2xl text-purple-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Join 750+ companies that trust Arihant Staffing for their staffing needs. Experience the future of recruitment with our AI-powered platform.
+                Join 150+ companies that trust Arihant Staffing for their staffing needs. Experience the future of recruitment with our AI-powered platform.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-8 justify-center mb-12">
                 <button class="bg-white text-purple-600 px-12 py-6 rounded-full font-bold text-xl hover:scale-105 transition-transform duration-300 shadow-2xl">
                     <i class="fas fa-calendar mr-3"></i>
-                    Schedule Free Demo
+                    Contact Us
                 </button>
                 <button class="border-3 border-white text-white px-12 py-6 rounded-full font-bold text-xl hover:bg-white hover:text-purple-600 transition-all duration-300">
                     <i class="fas fa-phone mr-3"></i>
                     Call : (555) 123-4567
                 </button>
             </div>
-
-        
         </div>
     </section>
 
@@ -1351,9 +1278,6 @@
                 <!-- Company Info -->
                 <div class="lg:col-span-2 space-y-8">
                     <div class="flex items-center space-x-3">
-                        <!-- <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center">
-                            <i class="fas fa-users text-white text-xl"></i>
-                        </div> -->
                         <span class="text-3xl font-black gradient-text">Arihant Staffing</span>
                     </div>
                     <p class="text-gray-400 leading-relaxed text-lg max-w-md">
@@ -1460,6 +1384,35 @@
         }
         requestAnimationFrame(raf);
 
+        // Enhanced Particle System for Banner
+        function createEnhancedParticles() {
+            const container = document.getElementById('enhanced-particles-container');
+            const particleCount = 60;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle-enhanced';
+                
+                const size = Math.random() * 6 + 2;
+                const left = Math.random() * 100;
+                const duration = Math.random() * 18 + 10;
+                const delay = Math.random() * 25;
+                const opacity = Math.random() * 0.8 + 0.2;
+                
+                particle.style.cssText = `
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${left}%;
+                    animation-duration: ${duration}s;
+                    animation-delay: ${delay}s;
+                    opacity: ${opacity};
+                `;
+                
+                container.appendChild(particle);
+            }
+        }
+        createEnhancedParticles();
+
         // Custom cursor functionality
         const cursor = document.querySelector('.cursor');
         let mouseX = 0;
@@ -1551,8 +1504,7 @@
 
         // Hero animations
         gsap.timeline({ delay: 0.5 })
-            .from('.hero-badge', { y: 50, opacity: 0, duration: 1, ease: "power3.out" })
-            .from('.hero-title', { y: 100, opacity: 0, duration: 1.2, ease: "power3.out" }, "-=0.5")
+            .from('.hero-title', { y: 100, opacity: 0, duration: 1.2, ease: "power3.out" })
             .from('.hero-subtitle', { y: 50, opacity: 0, duration: 1, ease: "power3.out" }, "-=0.3")
             .from('.hero-buttons', { y: 50, opacity: 0, duration: 1, ease: "power3.out" }, "-=0.2")
             .from('.hero-stats > div', { y: 30, opacity: 0, duration: 0.8, ease: "power3.out", stagger: 0.1 }, "-=0.3")
@@ -1560,7 +1512,7 @@
 
         // Typing effect for hero title
         const typedText = document.querySelector('.typed-text');
-        const words = ['Perfect', 'Ideal', 'Dream', 'Elite'];
+        const words = ['Experienced','Skilled', 'Compent', 'Qualified', 'Elite'];
         let wordIndex = 0;
 
         function typeWord() {
@@ -1603,36 +1555,6 @@
                 duration: 0.8,
                 delay: i * 0.2 + 2,
                 ease: "power3.out"
-            });
-        });
-
-        // Client logos animation
-        gsap.utils.toArray('.client-logo').forEach((logo, i) => {
-            gsap.from(logo, {
-                scale: 0,
-                opacity: 0,
-                duration: 0.6,
-                delay: i * 0.1,
-                ease: "back.out(1.7)",
-                scrollTrigger: {
-                    trigger: logo,
-                    start: "top 85%"
-                }
-            });
-        });
-
-        // Service cards animation
-        gsap.utils.toArray('.service-card').forEach((card, i) => {
-            gsap.from(card, {
-                y: 100,
-                opacity: 0,
-                duration: 1,
-                delay: i * 0.1,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 80%"
-                }
             });
         });
 
@@ -1846,30 +1768,10 @@
             });
         });
 
-        // Intersection Observer for additional animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.querySelectorAll('[class*="fade-"], [class*="slide-"], [class*="scale-"]').forEach(el => {
-            observer.observe(el);
-        });
-
         // Performance optimizations
         let ticking = false;
 
         function updateAnimations() {
-            // Update any continuous animations here
             ticking = false;
         }
 
@@ -1880,23 +1782,42 @@
             }
         }
 
-        // Throttle scroll events
         window.addEventListener('scroll', requestTick, { passive: true });
 
-        // Preload critical resources
-        const preloadLinks = [
-            'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap'
-        ];
+        console.log('🚀 Enhanced Arihant Staffing website loaded successfully!');
 
-        preloadLinks.forEach(href => {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'style';
-            link.href = href;
-            document.head.appendChild(link);
-        });
+        // Mobile menu functionality
+document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('hidden');
+});
 
-        console.log('🚀 Arihant Staffing website loaded successfully!');
+// Mobile services dropdown
+document.getElementById('mobile-services-btn').addEventListener('click', function() {
+    const servicesMenu = document.getElementById('mobile-services-menu');
+    const chevron = document.getElementById('mobile-chevron');
+    
+    servicesMenu.classList.toggle('hidden');
+    chevron.classList.toggle('rotate-180');
+});
+
+// Close mobile menu when clicking on nav links
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+    });
+});
+
+// Optional: Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const dropdown = document.getElementById('services-dropdown');
+    const servicesBtn = document.getElementById('services-btn');
+    
+    if (!servicesBtn.contains(event.target) && !dropdown.contains(event.target)) {
+        // Optional: Add class to force close if needed
+    }
+});
+
     </script>
 </body>
 </html>
